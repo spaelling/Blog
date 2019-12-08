@@ -74,7 +74,12 @@ foreach ($BlogPost in $BlogPosts) {
     $DivsWithStyle = ($TheDiv.getElementsByTagName('div') | Where-Object {$_.style.length -gt 0})
     $null = $DivsWithStyle | ForEach-Object{$_.style.cssText = $null }
 
-    # TODO: pandoc still leaves some stray DIV tags, but maybe it does not matter
+    <#
+        TODO: 
+        pandoc still leaves some stray DIV tags, but maybe it does not matter
+        Some lines ends with \
+        some IMG tags get garbled
+    #>
     
     # The entire blogpost content is in this
     $Content = $TheDiv.innerHTML
@@ -82,7 +87,14 @@ foreach ($BlogPost in $BlogPosts) {
     Write-Host "Creating '$FilePath'"
     $Content | Out-File -FilePath $FilePath -Encoding utf8
 }
-pandoc "$OutDir\hello-azure-functions-integrating-with.html" -f html -t markdown -s -o 'example.md'
+
+$OutDirConverted = (Resolve-Path $OutDirConverted).Path
+foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
+    Write-Host "Converting '$($Doc.FullName)' to markdown"
+    $FilePath = Join-Path $OutDirConverted "$($Doc.BaseName).md"
+    pandoc $Doc.FullName -f html -t markdown -s -o $FilePath
+}
+
 
 
 
