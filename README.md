@@ -1,2 +1,1 @@
-# PSBlogger
-PS module for Blogspot/Blogger, primarily for exporting the blogposts
+All my blogposts from https://blog.spaelling.xyz (blogger.com) converted to markdown
