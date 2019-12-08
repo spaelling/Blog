@@ -1,27 +1,27 @@
-No one likes writing documentation. Even less so updating existing
+﻿No one likes writing documentation. Even less so updating existing
 documentation. But it is nice to have when you need it. Also don\'t just
 write documentation for the sake of documentation. Write it down if you
 need it later and is not inherently obvious from the code (or whatever).
 But good documentation practice is a can of worms I am not going to open
-here.\
-\
+here.
+
 In the following I will present a script that helps with something as
 tedious as documenting views in Service Manager. Are you going to do
-that manually?\
-\
+that manually?
+
 
 ::: {.separator}
 [![](//1.bp.blogspot.com/-d2naK9igUCY/VLTj4bAsTeI/AAAAAAAADyE/Cwt-RNNeX9o/s1600/badtime01.jpg){width="640"
 height="640"}](//1.bp.blogspot.com/-d2naK9igUCY/VLTj4bAsTeI/AAAAAAAADyE/Cwt-RNNeX9o/s1600/badtime01.jpg)
 :::
 
-\
-Also views change, and you would then have to update your documentation.
-You really need this script!\
-\
-\
 
-<div>
+Also views change, and you would then have to update your documentation.
+You really need this script!
+
+
+
+```
 
 +-----------------------------------+-----------------------------------+
 |       1                           |     # Author: And                 |
@@ -275,17 +275,17 @@ You really need this script!\
 |                                   | mp\viewdoc.csv -NoTypeInformation |
 +-----------------------------------+-----------------------------------+
 
-</div>
+```
 
-\
+
 You can [download the code from Technet
 gallery](https://gallery.technet.microsoft.com/Scripted-Service-Manager-50db83d5).
-It also includes code on how to do the same with Request Offerings.\
-\
+It also includes code on how to do the same with Request Offerings.
+
 I also found
 this: <http://www.buchatech.com/2015/03/service-manager-discovery-report/> -
 check it out.
 
-<div>
+```
 
-</div>
+```

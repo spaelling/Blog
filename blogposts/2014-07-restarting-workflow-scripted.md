@@ -1,11 +1,11 @@
-In my [previous
+﻿In my [previous
 post](http://codebeaver.blogspot.dk/2014/06/managing-activities-and-restarting.html)
 I showed a way to restart a stuck Service Request workflow. Now,
 detecting SRs that are stuck can be quite tedious using the console. I
 wrote a script that can detect a possibly stuck workflow. It is actually
 rather simple, looping all relevant SRs and testing if there is no
-active activity and one or more pending activities.\
-\
+active activity and one or more pending activities.
+
 
     Import-Module SMLets
 
@@ -55,8 +55,8 @@ active activity and one or more pending activities.\
 Next up is trying to get the workflow started again. One approach is to
 put the SR on hold, wait abit (10-20 seconds), activate the SR, and
 optionally restore the original SR status (typically some custom status
-like \"pending user response\").\
-\
+like \"pending user response\").
+
 
     Import-Module SMLets
 
@@ -83,9 +83,9 @@ like \"pending user response\").\
         $SR | Set-SCSMObject -PropertyHashtable @{Status = $PrevStatus}
     }
 
-\
+
 Leave in a comment below how many stuck workflows you found ;)
 
-<div>
+```
 
-</div>
+```

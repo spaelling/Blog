@@ -1,45 +1,45 @@
-\
+﻿
 
-<div>
+```
 
 This is intended as a reference compilation of performance optimizations
 for Service Manager. I have divided them into multiple parts for quicker
-reference.\
-\
+reference.
+
 Everything that follows is from various blogposts, most of them can be
 found in my [previous
 blogpost](http://codebeaver.blogspot.dk/2014/12/service-manager-2012-performance.html).
-All credit goes to the guys and gals who wrote those.\
-\
+All credit goes to the guys and gals who wrote those.
+
 This is work in progress, so keep comming back :D
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 [**SQL**]{style="FONT-SIZE: large"}
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 **[Preparation:]{.underline}**
 
-</div>
+```
 
-<div>
+```
 
 -   Make sure the SQL meets the recommended hardware requirements ([Look
     up the SM Sizer
@@ -48,15 +48,15 @@ This is work in progress, so keep comming back :D
 -   If possible keep Service Manager, Datawarehouse (and Orchestrator)
     on seperate SQL boxes. This makes them easier to scale later on.
 
-<div>
+```
 
 **[Post install:]{.underline}**
 
-</div>
+```
 
-</div>
+```
 
-<div>
+```
 
 -   Create tempdbs for both service manager and datawarehouse. Rule of
     thumb is one per two cpus up to one per cpu. Put them on fast disks
@@ -75,31 +75,31 @@ This is work in progress, so keep comming back :D
     [here](http://www.concurrency.com/wp-content/uploads/2013/04/MMS-2013-Service-Manager-Scalability.pptx),
     page 15).
 
-<div>
+```
 
 [**Service Manager**]{style="FONT-SIZE: large"}
 
-</div>
+```
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 **Preparation:**
 
-</div>
+```
 
-<div>
+```
 
 -   Make sure that you will be installing a secondary management server
     and have consoles connect to this, and this alone. The primary
-    management server will be a dedicated workflow server.\
+    management server will be a dedicated workflow server.
     Rule of thumb is 12 concurrent console sessions per cpu, but you can
     likely handle more.
 -   Make sure there is a low latency & high bandwidth connection between
@@ -108,15 +108,15 @@ This is work in progress, so keep comming back :D
     connection is an issue consider using remote desktop, citrix or 3rd
     party alternatives (Cireson/GridPro) to the console.
 
-</div>
+```
 
-<div>
+```
 
 **Post install:**
 
-</div>
+```
 
-<div>
+```
 
 -   Apply UR2 - it has a critical console performance fix.
 -   Configure the Global Operators Group (read [FAQ: Why Does It Take So
@@ -149,43 +149,43 @@ This is work in progress, so keep comming back :D
 -   When creating AD-connectors point only at a specific OU containing
     the users you want to import into Service Manager. If you then need
     to import from more than one OU then create more AD-connectors. Also
-    use this ldap query for only importing enabled accounts\
-    (&(ObjectCategory=User)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))\
+    use this ldap query for only importing enabled accounts
+    (&(ObjectCategory=User)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))
     Remember to check the \'Do not write null values for properties not
-    set in Active Directory\' box.\
+    set in Active Directory\' box.
     If you have more than one AD-connector use different runas account
-    (each based on different AD-users) for each.\
+    (each based on different AD-users) for each.
     Read more on AD-connector optimizations
     [here](http://blogs.technet.com/b/thomase/archive/2013/04/08/scsm-active-directory-connector-optimization.aspx).
 
-<div>
+```
 
 I will try and keep this updated as I learn new tricks. There are tons
 more, but I find these to be fairly trivial to apply and still alot to
 gain.
 
-</div>
+```
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
 
-\
+```
 
-</div>
 
-<div>
 
-\
+```
 
-</div>
+```
 
-<div>
 
-</div>
+
+```
+
+```
+
+```

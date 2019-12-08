@@ -1,10 +1,10 @@
-The Azure Application Gateway can also function as a Web Application
+﻿The Azure Application Gateway can also function as a Web Application
 Firewall (WAF), and is a must have in any enterprise environment. In
 order to audit the firewall events the **ApplicationGatewayFirewallLog**
 must be ex. achieved to a storage account or even better, send to log
 analytics. This can be setup in the **Diagnostic settings **tab in the
-WAF.\
-\
+WAF.
+
 The WAF has more than 300 rules it matches each request against, and if
 the **Advanced rule configuration** is disabled then all rules enabled
 and a single match will result in a request being blocked. Each rule is
@@ -13,23 +13,23 @@ map the Id to a descriptive text. Microsoft has this readily available
 in markdown
 at <https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/application-gateway/application-gateway-crs-rulegroups-rules.md>,
 which is what they use to generate documentation for the WAF. Currently
-it is missing a few rule Ids. But we will get back to this part.\
-\
+it is missing a few rule Ids. But we will get back to this part.
+
 The end goal is to get something like this, presented in a Azure
-dashboard.\
-\
+dashboard.
+
 
 ::: {.separator}
 [![](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s640/WAF01.png){width="640"
 height="176"}](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s1600/WAF01.png)
 :::
 
-\
-Let\'s look at the query we need to write first.\
-\
-\
 
-<div>
+Let\'s look at the query we need to write first.
+
+
+
+```
 
     // variables
     let resourceId = "/SUBSCRIPTIONS/<SUBSCRIPTION_ID>/RESOURCEGROUPS/<RESOURCEGROUPNAME>/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/<WAF_NAME>";
@@ -54,37 +54,37 @@ Let\'s look at the query we need to write first.\
     | take 50
     | project Rule = strcat(ruleId_s, ' - ', rule_mapping[ruleId_s]), Uri = strcat(hostname_s,requestUri_s),Timestamp = TimeGenerated
 
-</div>
+```
 
-\
+
 First find your WAF resource Id and paste it in. This query will look at
 past 3 days of data (and we will eventually take the latest 50 entries).
 The last part is only relevant in the Log Analytics query editor, but it
-is best practice to limit data by date early on.\
-\
+is best practice to limit data by date early on.
+
 The *left* part of the join will get the transactions where the
 *action* is *Matched*. Each request will generate 0 (no rule matches) or
 more transactions, one for each matching rule, and two more (block
-actions) if one of the rules are enabled.\
-Finally only the properties that are needed is projected.\
-\
+actions) if one of the rules are enabled.
+Finally only the properties that are needed is projected.
+
 The *right* part of the join is very similar, only we look transactions
 where the *action* is *Blocked.* And then we project, using *distinct*,
 the property *transactionId\_s*. This is the only property we need for
 the join, and we use distinct as there will for each transaction be
 either 0 or 2 entries. If we used project the join would double up each
-*Matched* entry.\
-\
+*Matched* entry.
+
 The results is then sorted by date and we *take* the latest 50 entries.
 In the projection we use a dynamic array to map each rule Id to a
-descriptive text, which is explained next.\
-\
-The following script will generate the code we need to put before the
-Log Analytics query.\
-\
-\
+descriptive text, which is explained next.
 
-<div>
+The following script will generate the code we need to put before the
+Log Analytics query.
+
+
+
+```
 
     $Markdown = (wget 'https://raw.githubusercontent.com/MicrosoftDocs/azure-docs/master/articles/application-gateway/application-gateway-crs-rulegroups-rules.md').Content
 
@@ -139,12 +139,12 @@ Log Analytics query.\
     # removes the very last , and put the result into clipboard
     $KustoMapping -replace "(?s)(.*),(.*)", '' | clip
 
-</div>
+```
 
-\
+
 After pasting be sure to remove any blank lines in the query. The result
-can then be pinned to a dashboard of your choice.\
-\
+can then be pinned to a dashboard of your choice.
+
 Note that if you have all rules enabled, you can skip the join entirely.
 Each rule matched will result in the request being blocked. But you may
 at some point disable some rules (some are very stringent), or perhaps
@@ -153,13 +153,13 @@ the request is being blocked; each matched rule will provide a score,
 the sum of the score is then matched against a treshold I think is
 \"greater than 0\" currently. The point of this is that some rules
 matched is more dangerous than others, and the sum of them all provides
-a way to determine the risk of not blocking the request.\
-\
-The result of the script can be seen below.\
-\
-\
+a way to determine the risk of not blocking the request.
 
-<div>
+The result of the script can be seen below.
+
+
+
+```
 
     let rule_mapping = dynamic(
       {
@@ -509,8 +509,8 @@ The result of the script can be seen below.\
 
       });
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

@@ -1,14 +1,14 @@
-Inspired by Anders Bengtssons [blogpost](http://contoso.se/blog/?p=3648)
+﻿Inspired by Anders Bengtssons [blogpost](http://contoso.se/blog/?p=3648)
 I have come up with a different approach, similar to what I showed
 in [Service Request with Optional
-Activites](http://codebeaver.blogspot.dk/2013/11/service-request-with-optional-activites.html).\
-\
+Activites](http://codebeaver.blogspot.dk/2013/11/service-request-with-optional-activites.html).
+
 Again I exploit the setup where Manual Activities are extended with a
 number of properties. First create a Service Request template and add
 two activities. In the Extension tab for the first one
 enter *\_\_copy\_note\_on\_completion\_\_* in UserInput5 (or whatever
-you called yours).\
-\
+you called yours).
+
 
 ::: {.separator}
 [![](//1.bp.blogspot.com/-PdWh1iyKURc/UnrGbIONzHI/AAAAAAAACzk/8GdgXqkUNcg/s400/11.png){width="400"
@@ -16,7 +16,7 @@ height="152"}](//1.bp.blogspot.com/-PdWh1iyKURc/UnrGbIONzHI/AAAAAAAACzk/8GdgXqkU
 :::
 
 Now create a runbook that monitors Manual Activities matching this
-configuration.\
+configuration.
 
 ::: {.separator}
 [![](//3.bp.blogspot.com/-WJ-bZo_1-aM/UnwF3m8lZmI/AAAAAAAACz0/PNc6VFu5wNs/s400/1.png){width="400"
@@ -26,14 +26,14 @@ height="158"}](//3.bp.blogspot.com/-WJ-bZo_1-aM/UnwF3m8lZmI/AAAAAAAACz0/PNc6VFu5
 The monitor triggers on Manual Activities that are updated to status
 Completed, and where UserInput5
 equals *\_\_copy\_note\_on\_completion\_\_*. The runbook looks in its
-whole as below\
+whole as below
 
 ::: {.separator}
 [![](//4.bp.blogspot.com/-YMAQQTXCV2k/UnwGna6stGI/AAAAAAAACz8/cerQ27cd76k/s320/2.png){width="320"
 height="165"}](//4.bp.blogspot.com/-YMAQQTXCV2k/UnwGna6stGI/AAAAAAAACz8/cerQ27cd76k/s1600/2.png)
 :::
 
-The runbook invoked by the monitor being triggered looks like this\
+The runbook invoked by the monitor being triggered looks like this
 
 ::: {.separator}
 [![](//2.bp.blogspot.com/-FiYUrMtb0Dc/UnwG-ppeGxI/AAAAAAAAC0E/A9bVLyq2Uho/s400/3.png){width="400"
@@ -92,6 +92,6 @@ Also sometimes the order in the XML is changed while sequenceID is not,
 meaning the ID ordering is messed up. Same fix (export, edit, import).
 :::
 
-<div>
+```
 
-</div>
+```

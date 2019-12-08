@@ -1,14 +1,14 @@
-I recently had some storage issues in the company lab which meant that
+﻿I recently had some storage issues in the company lab which meant that
 after a lengthy CHKDSK that permission on all VHDX files was lost. The
 solution was luckily simple: Reattach each drive and the permission on
 the file was restored. Problem was then that there was more than 50
 drives all in all. Solution then became, as it often is, do it with
-Powershell.\
-\
+Powershell.
+
 The script as follows ([Download from
 Technet](https://gallery.technet.microsoft.com/Reattaching-Drives-on-VMs-3b038909)),
-formatted using <https://tohtml.com/powershell/>:\
-\
+formatted using <https://tohtml.com/powershell/>:
+
 
     $States = ( [Microsoft.HyperV.PowerShell.VMState]::Off, 
                 [Microsoft.HyperV.PowerShell.VMState]::OffCritical
@@ -61,6 +61,6 @@ formatted using <https://tohtml.com/powershell/>:\
         }
     }
 
-<div>
+```
 
-</div>
+```

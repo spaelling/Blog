@@ -1,7 +1,7 @@
-Sounds too good to be true? Well it is. Almost. The script I will be
+﻿Sounds too good to be true? Well it is. Almost. The script I will be
 sharing today will get you a long way though. A high level rundown of
-what it will do\
-\
+what it will do
+
 
 -    stop console
 -    seal MP
@@ -10,38 +10,38 @@ what it will do\
 -    import new MP bundle
 -    start console
 
-<div>
+```
 
 That almost gets you all the way. You will have to do the clicking
 yourself. You can then debug the hell out of your code following
 [this](http://scsmlab.com/2013/04/09/debugging-custom-scsm-form-in-visual-studio/).
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Script as follows, and download it
 [here](https://gallery.technet.microsoft.com/Automating-Custom-Code-bcfdc401).
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
 
-</div>
+```
 
-\
+```
+
+
 
     # Authored by Anders Spælling, spaelling@gmail.com
 
@@ -118,6 +118,6 @@ Script as follows, and download it
     Write-Debug "Starting console..."
     & "C:\Program Files\Microsoft System Center 2012 R2\Service Manager\Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe"
 
-<div>
+```
 
-</div>
+```

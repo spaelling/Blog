@@ -1,9 +1,9 @@
-A script is worth a thousand words, right?\
-\
-\
-\
+﻿A script is worth a thousand words, right?
 
-<div>
+
+
+
+```
 
     <#
      I use Out-GridView (alias: ogv) alot for interactively selecting objects. Also sometimes I need some extra information not 
@@ -94,8 +94,8 @@ A script is worth a thousand words, right?\
         Get-Self | `
         Remove-Item -WhatIf
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

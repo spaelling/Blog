@@ -1,22 +1,22 @@
-A colleague of mine recently handed me the script
+﻿A colleague of mine recently handed me the script
 from <https://github.com/Azure-Samples/virtual-machines-powershell-auto-expired/>
-and asked for my help with what he thought was a permission issue.\
+and asked for my help with what he thought was a permission issue.
 The script is 2 years old, so things have changed quite a bit since, but
 it is just not very clever as it fetches all resources in an entire
 subscription (something this colleague did not have permission to do),
-which by all means is a bad idea.\
-\
+which by all means is a bad idea.
+
 I made some improvements and wanted to share. Below is simply run and
 you are prompted to select a lab, then one or more VMs in that lab, and
-finally in how many days the VMs should expire.\
-\
-Note that I will not be updating below with fixes so grab it from
-Technet [here](http://noteuploadedyet/).\
-\
-\
-\
+finally in how many days the VMs should expire.
 
-<div>
+Note that I will not be updating below with fixes so grab it from
+Technet [here](http://noteuploadedyet/).
+
+
+
+
+```
 
     # you can remove the TenantId if you have just a single tenant
     $TenantId = ''
@@ -80,8 +80,8 @@ Technet [here](http://noteuploadedyet/).\
                                         -LabResourceGroupName $Lab.ResourceGroupName `
                                         -ExpiredUTCDate (Get-Date).AddDays($AddDays)
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

@@ -1,16 +1,16 @@
-There are plenty of scripts around that helps deploying Nano server. But
+﻿There are plenty of scripts around that helps deploying Nano server. But
 there seems to be issues between the various TPs, I had trouble with a
-script that worked for TP4 but not at all for TP5.\
-\
-So I ended up creating my own. It should just run in one go, but I
-suggest you take a few lines at at time to sort out any issues.\
-\
-The script as follows, and found on [Technet
-gallery](https://gallery.technet.microsoft.com/Scripted-Nano-server-439ec923).\
-\
-\
+script that worked for TP4 but not at all for TP5.
 
-<div>
+So I ended up creating my own. It should just run in one go, but I
+suggest you take a few lines at at time to sort out any issues.
+
+The script as follows, and found on [Technet
+gallery](https://gallery.technet.microsoft.com/Scripted-Nano-server-439ec923).
+
+
+
+```
 
 +-----------------------------------+-----------------------------------+
 |      1                            |     # note this is w              |
@@ -178,8 +178,8 @@ gallery](https://gallery.technet.microsoft.com/Scripted-Nano-server-439ec923).\
 |                                   |     Find-NanoServerPackage        |
 +-----------------------------------+-----------------------------------+
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

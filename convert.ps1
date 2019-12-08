@@ -5,9 +5,21 @@ $OutDir = "c:\temp\blogposts"
 # this is where we put the markdown
 $OutDirConverted = ".\blogposts"
 
+# this part will use chocolatey to check if pandoc is installed, and if not, install it
+$PandocInstalled = (choco list -lo | Where-object { $_ -like "pandoc*" }).count -gt 0
+if(-not $PandocInstalled)
+{
+    $IsAdmin = (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
+    if(-not $IsAdmin)
+    {
+        Read-Host -Prompt 'Will attempt to use chocolatey to install Pandoc, Press any key to continue'
+        Start-Process PowerShell -Verb Runas -Wait "choco install chocolatey-core.extension; choco install pandoc; Read-Host -Prompt 'Press any key to close'"
+    }
+}
+
 <#
     TODO
-use runspace for some of the more lengthy loops
+use runspaces, one runespace per blogpost
 #>
 
 $Archive = @{}
@@ -73,13 +85,6 @@ foreach ($BlogPost in $BlogPosts) {
     
     $DivsWithStyle = ($TheDiv.getElementsByTagName('div') | Where-Object {$_.style.length -gt 0})
     $null = $DivsWithStyle | ForEach-Object{$_.style.cssText = $null }
-
-    <#
-        TODO: 
-        pandoc still leaves some stray DIV tags, but maybe it does not matter
-        Some lines ends with \
-        some IMG tags get garbled
-    #>
     
     # The entire blogpost content is in this
     $Content = $TheDiv.innerHTML
@@ -93,22 +98,31 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     Write-Host "Converting '$($Doc.FullName)' to markdown"
     $FilePath = Join-Path $OutDirConverted "$($Doc.BaseName).md"
     pandoc $Doc.FullName -f html -t markdown -s -o $FilePath
+    
+    <# POST CLEANUP
+        TODO: 
+        *pandoc still leaves some stray DIV tags around code
+        *Some lines ends with \
+        some IMG tags get garbled
+    #>
+    
+    $Content = Get-Content -Path $FilePath
+    $NewContent = @()
+    foreach ($Line in $Content) {
+        # if ending with \
+        if($Line -like "*\")
+        {
+            # remove last occurence of \
+            $Line = $Line -replace "(.*)\\(.*)", '$1$2'
+        }
+        # we replace DIV tags with ``` - try to target just single lines with only a DIV tag (start/end tag)
+        if($Line.Trim() -like "<*DIV>")
+        {
+            # remove last occurence of \
+            $Line = $Line -replace "<DIV>", '```' -replace "</DIV>", '```'
+        }        
+
+        $NewContent += $Line
+    }
+    $NewContent | Out-File -FilePath $FilePath -Encoding utf8
 }
-
-
-
-
-# Next step is to convert each to markdown
-# One option is to implement https://github.com/domchristie/turndown in Azure Function app, call it with the html as payload
-# let reply with html converted to markdown, which we can then save to disk
-# javascript cannot write to disk, so we need to do it like this.
-
-# https://pandoc.org/ is a local solution
-
-$IsAdmin = (([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
-if(-not $IsAdmin)
-{
-    Read-Host -Prompt 'Will attempt to use chocolatey to install Pandoc, Press any key to continue'
-    Start-Process PowerShell -Verb Runas -Wait "choco install chocolatey-core.extension; choco install pandoc; Read-Host -Prompt 'Press any key to close'"
-}
-

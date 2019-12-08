@@ -1,12 +1,12 @@
-No time since I wrote about Service Manager. Something that comes back
+﻿No time since I wrote about Service Manager. Something that comes back
 to haunt me from time to time is filtering on NULL. I always forget how,
-so now I will document it, once and for all!\
-\
-A script speaks a thousand words:\
-\
-\
+so now I will document it, once and for all!
 
-<div>
+A script speaks a thousand words:
+
+
+
+```
 
 +-----------------------------------+-----------------------------------+
 |     1                             |     $IRClass = Get-SC             |
@@ -27,8 +27,8 @@ A script speaks a thousand words:\
 |                                   | Filter "CustomerProperty -ISNULL" |
 +-----------------------------------+-----------------------------------+
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

@@ -1,14 +1,14 @@
-I had to wrap my mind around error handling and the
+﻿I had to wrap my mind around error handling and the
 *begin..process..end* function in PowerShell. It becomes really fun when
-I start throwing different *ErrorActions* after it!\
-\
-This will be mostly some PowerShell snippets and their result. So
-without further ado, lets dive into some code!\
-\
-This is a really simple function:\
-\
+I start throwing different *ErrorActions* after it!
 
-<div>
+This will be mostly some PowerShell snippets and their result. So
+without further ado, lets dive into some code!
+
+This is a really simple function:
+
+
+```
 
     function myfunc
     {
@@ -54,23 +54,23 @@ This is a really simple function:\
         -ForegroundColor Cyan
     myfunc -ErrorAction Stop
 
-</div>
+```
 
-\
-The output is:\
-\
-[![](https://2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)](//2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)\
-\
-\
+
+The output is:
+
+[![](https://2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)](//2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)
+
+
 We see that for both ErrorActions *Continue/SilentlyContinue* that the
 process block is executed. When we use *Stop* then Write-Error becomes a
-terminating error and the pipeline is stopped.\
-\
-Let us not dwell on that and move onto a function with some actual
-input:\
-\
+terminating error and the pipeline is stopped.
 
-<div>
+Let us not dwell on that and move onto a function with some actual
+input:
+
+
+```
 
     # with input
     function myfunc
@@ -122,21 +122,21 @@ input:\
         -ForegroundColor Cyan
     @(1,2,3) | myfunc -ErrorAction Stop
 
-</div>
+```
 
-\
-The output is:\
-\
-[![](https://1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)](//1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)\
-\
+
+The output is:
+
+[![](https://1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)](//1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)
+
 Now we see that something uninteded is happening for both ErrorActions
 *Continue/SilentlyContinue*. 3 is echoed still. With *Stop* the story is
-as before, Write-Error becomes a terminating error and 3 is not echoed.\
-\
-Now we basically just add a return statement:\
-\
+as before, Write-Error becomes a terminating error and 3 is not echoed.
 
-<div>
+Now we basically just add a return statement:
+
+
+```
 
     # with input
     function myfunc
@@ -195,21 +195,21 @@ Now we basically just add a return statement:\
     Write-Host 'this is not reached' `
         -ForegroundColor Cyan
 
-</div>
+```
 
-\
-The output is:\
-\
-[![](https://2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)](//2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)\
-\
+
+The output is:
+
+[![](https://2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)](//2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)
+
 We see that in all 3 cases that x greater than 2 is not echoed. Now
 ErrorAction Stop makes sense. We indicate that if the function fails for
-any input we do not wish to continue the script.\
-\
-And we can add some error handling:\
-\
+any input we do not wish to continue the script.
 
-<div>
+And we can add some error handling:
+
+
+```
 
     # with input
     function myfunc
@@ -278,18 +278,18 @@ And we can add some error handling:\
     Write-Host 'this is not reached' `
         -ForegroundColor Cyan
 
-</div>
+```
 
-\
-The output is:\
-[![](https://3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)](//3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)\
-\
+
+The output is:
+[![](https://3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)](//3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)
+
 I hope this helps understanding how some of the *begin..process..end*
 function works with regards to errors and error handling. I know I will
-be returning to this from time and again :D\
-\
-\
+be returning to this from time and again :D
 
-<div>
 
-</div>
+
+```
+
+```

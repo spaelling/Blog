@@ -1,35 +1,35 @@
-I had to access the MS Graph API from Azure Function App and after
+﻿I had to access the MS Graph API from Azure Function App and after
 wasting some time trying to get it to work with a Managed Service
 Identity (you can get a token, but cannot assign the MSI any roles,
-yet), I opted for the good ol\' Service Principal (SP).\
-\
+yet), I opted for the good ol\' Service Principal (SP).
+
 There are several blogpost on how to get a token for various Microsoft
 APIs, and most of the code is very similar, but they are all lacking one
-essential detail, without it you may get varying results.\
-\
+essential detail, without it you may get varying results.
+
 I experienced getting a token that the API claimed was invalid, one that
 was expired, not getting a token because the SP secret was incorrect (it
 was not), and maybe just that no overload of the function could be
-found. Clearly I was doing something wrong.\
-\
+found. Clearly I was doing something wrong.
+
 For good measure, here is a short guide on getting a working SP. Go to
-Azure AD,-\> App Registrations, and create a new app registration.\
+Azure AD,-\> App Registrations, and create a new app registration.
 The application type is web app/API, you can put anything in the sign-on
-URL.\
-\
+URL.
+
 
 ::: {.separator}
 [![](https://1.bp.blogspot.com/-L0q-gDfE_K4/W4A_FLhD8-I/AAAAAAAAlPY/1VIvpySLgtQ3y4DBvdCw_vj7_5JVPwV6QCLcBGAs/s640/newappreg.PNG){width="640"
 height="384"}](https://1.bp.blogspot.com/-L0q-gDfE_K4/W4A_FLhD8-I/AAAAAAAAlPY/1VIvpySLgtQ3y4DBvdCw_vj7_5JVPwV6QCLcBGAs/s1600/newappreg.PNG)
 :::
 
-\
-This will also create an enterprise application.\
-\
+
+This will also create an enterprise application.
+
 In the settings of the newly registered app click Settings, and under
 API Access click Required permissions. Add a new permission and select
-the Microsoft Graph API, and check off the permissions needed.\
-\
+the Microsoft Graph API, and check off the permissions needed.
+
 
 ::: {.separator}
 [![](https://1.bp.blogspot.com/-EJO3n4u4O3s/W4A_9Ucqf-I/AAAAAAAAlPg/cA2u4-pguE8h06skrhrJOqASH5giIfqMgCLcBGAs/s640/newperm.PNG){width="640"
@@ -37,68 +37,68 @@ height="394"}](https://1.bp.blogspot.com/-EJO3n4u4O3s/W4A_9Ucqf-I/AAAAAAAAlPg/cA
 :::
 
 ::: {.separator}
-\
+
 :::
 
 ::: {.separator}
-\
+
 :::
 
-When done you need to click Grant Permissions.\
-\
+When done you need to click Grant Permissions.
+
 Next click Keys. Fill in a description, select when the key should
 expire and click Save. The key will be generated and shown. Save this
-for later.\
-\
-Back in your app registration copy the Application ID.\
-\
+for later.
+
+Back in your app registration copy the Application ID.
+
 Next we need a dll
 file, Microsoft.IdentityModel.Clients.ActiveDirectory.dll - this is the
 main contribution of this blog. It just happens that there is many
 different versions of this, and you need the right one to get a working
-token.\
+token.
 I found that the one in [AzureRm.Profile
 5.3.4](https://www.powershellgallery.com/packages/AzureRM.profile/5.3.4)
 works just fine. I would guess versions close to this one is the same.
-You can get it using Save-Module:\
-\
+You can get it using Save-Module:
 
-<div>
+
+```
 
     Save-Module AzureRm.Profile -RequiredVersion 5.3.4 -Path C:\Temp
 
-</div>
+```
 
-\
+
 Now find Microsoft.IdentityModel.Clients.ActiveDirectory.dll and use
-Add-Type to load it\
-\
+Add-Type to load it
 
-<div>
+
+```
 
     Add-Type -Path "C:\Temp\AzureRM.profile\5.3.4\Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
 
-</div>
+```
 
-\
+
 Next we need an important piece of information. Run this in a fresh
-PS-session:\
-\
+PS-session:
 
-<div>
+
+```
 
     [appdomain]::currentdomain.getassemblies() | Where-Object {$_.fullname -like "Microsoft.IdentityModel.Clients.ActiveDirectory*"} | Select-Object -Property Fullname
 
-</div>
+```
 
-\
+
 The result is what we need in the following function. We can use it to
 specify that it is that exact dll-file we are referring to. There could
 be many of these loaded, and if the wrong one is used we get a
-non-desirable result.\
-\
+non-desirable result.
 
-<div>
+
+```
 
     Function Get-AADToken {
         [CmdletBinding()]
@@ -130,13 +130,13 @@ non-desirable result.\
         $Token
     }
 
-</div>
+```
 
-\
-The function is called as follows\
-\
 
-<div>
+The function is called as follows
+
+
+```
 
     # load this specific Microsoft.IdentityModel.Clients.ActiveDirectory.dll
     Add-Type -Path "C:\temp\AzureRM.profile\5.3.4\Microsoft.IdentityModel.Clients.ActiveDirectory.dll"
@@ -152,13 +152,13 @@ The function is called as follows\
     # get the token
     $Token = Get-AADToken -TenantID $TenantId -ServicePrincipalId $AppId -ServicePrincipalPwd $ServicePrincipalPwd
 
-</div>
+```
 
-\
-Now that we have a token, it is time to put it to work\
-\
 
-<div>
+Now that we have a token, it is time to put it to work
+
+
+```
 
     $Headers = @{
         "Authorization" = "Bearer $token"
@@ -172,8 +172,8 @@ Now that we have a token, it is time to put it to work\
         $_.Exception.ErrorDetails.Message
     }
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

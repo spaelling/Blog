@@ -1,12 +1,12 @@
-Fully configured Ubuntu server up and running in minutes? On Windows?
-Impossible you say? It is not!\
-\
-Start by installing [Docker](https://www.docker.com/). We will try to
-run the following Python code in the Docker container.\
-\
-\
+﻿Fully configured Ubuntu server up and running in minutes? On Windows?
+Impossible you say? It is not!
 
-<div>
+Start by installing [Docker](https://www.docker.com/). We will try to
+run the following Python code in the Docker container.
+
+
+
+```
 
     try:
         from slackclient import SlackClient
@@ -21,14 +21,14 @@ run the following Python code in the Docker container.\
     finally:
         pass
 
-</div>
+```
 
-\
+
 Copy this snippet to a file and name it *somecode.py*. Create a file
-called *Dockerfile* and paste the following into it.\
-\
+called *Dockerfile* and paste the following into it.
 
-<div>
+
+```
 
     FROM ubuntu:latest
     # update apt-get then install python3.5 and pip3
@@ -44,14 +44,14 @@ called *Dockerfile* and paste the following into it.\
     # run the bot
     CMD ["python3.5", "/src/somecode.py"]
 
-</div>
+```
 
-\
-Then run these few lines of PowerShell.\
-\
-\
 
-<div>
+Then run these few lines of PowerShell.
+
+
+
+```
 
     cd $PSScriptRoot
     # build the image (based on 'Dockerfile' in this folder) - ignore the security warning
@@ -59,19 +59,19 @@ Then run these few lines of PowerShell.\
     # run a container using the image we just created, --rm means we remove the container after it exists
     docker run --rm codebeaver/dockerisawesome
 
-</div>
+```
 
-\
-It may take some time to download the Ubuntu base image (ca. 500mb).\
-\
+
+It may take some time to download the Ubuntu base image (ca. 500mb).
+
 I intentionally put in an error. We did not import the *os* library in
 the Python code. Uncomment *import os* and run the PowerShell code
 again. That was it. You can easily install additional Python libraries
-by editing the Dockerfile.\
-\
+by editing the Dockerfile.
+
 You can run the container in Azure and there are various services for
 running Docker containers for you.
 
-<div>
+```
 
-</div>
+```

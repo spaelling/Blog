@@ -1,12 +1,12 @@
-\
+﻿
 
 ::: {.p1}
 Anders Bengtsson has provided a solution for [auto-closing
 incidents](http://contoso.se/blog/?p=1629) in Service Manager. The
 solution works well for closing a resolved incident, as one would
 normally not wish to inform the *Affected User* that the incident has
-been closed.\
-\
+been closed.
+
 :::
 
 ::: {.p1}
@@ -18,18 +18,18 @@ incidents should automatically resolve after 5 days if we did not get a
 response from the *Affected User*. The above mentioned solution could do
 this with a minor change to the code, but as most email-templates would
 use the *ResolutionDescription* to inform the user *why* the incident
-was resolved, these would now provide no information in that regard.\
-\
+was resolved, these would now provide no information in that regard.
+
 The following Powershell-script solves this. I am in no way a PS-expert,
 and I did borrow pieces of code in various places (my apologies for not
-giving credit where credit is due). I did borrow code from\
+giving credit where credit is due). I did borrow code from
 [here](http://blogs.technet.com/b/servicemanager/archive/2011/04/22/using-smlets-beta-3-post-3-using-set-scsmobject-to-bulk-update-properties-on-objects.aspx) which
 helped me update multiple properties (Status & ResolutionDescription) in
 an incident.
 :::
 
 ::: {.p1}
-\
+
 :::
 
 ::: {.p1}
@@ -40,12 +40,12 @@ other activity on the incident would prolong the period it could stay in
 the incident with a field like \"PendingUserResponseSinceDate\" just
 like Service Requests has a \"CompletedDate\", and test on this instead.
 As we are using the SendMail plugin (which extends the incident with
-Message and MessageType), I did not use this solution.\
-\
+Message and MessageType), I did not use this solution.
+
 **Note**: Requires SCSM Powershell Cmdlets
-from <http://smlets.codeplex.com/>\
-formatted using <http://codeformatter.blogspot.dk/>\
-\
+from <http://smlets.codeplex.com/>
+formatted using <http://codeformatter.blogspot.dk/>
+
 :::
 
      Import-Module smlets  
@@ -78,6 +78,6 @@ formatted using <http://codeformatter.blogspot.dk/>\
        
      Get-SCSMObject -criteria $criteria | Set-SCSMObject -PropertyHashtable $PropertyHash  
 
-<div>
+```
 
-</div>
+```

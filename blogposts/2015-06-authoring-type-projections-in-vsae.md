@@ -1,79 +1,79 @@
-It seems that VSAE is not that widely used. That may be a lack of
+﻿It seems that VSAE is not that widely used. That may be a lack of
 information on the hows and the whats of things. So today I will just
-show something basic; authoring a type projection.\
-\
+show something basic; authoring a type projection.
+
 The VSAE can be downloaded from
 [here](http://www.microsoft.com/en-us/download/details.aspx?id=30169).
-You will need Visual Studio 2012/13 Ultimate or Professional.\
-\
+You will need Visual Studio 2012/13 Ultimate or Professional.
+
 Now in Visual Studio create a new project. Select Templates-\>Management
 Pack-\>Service Manager and select the template that matches your
 environment version. I will pick the R2 one. I will name
-mine *Codebeaver.IR.TypeProjection.Tutorial*.\
-\
+mine *Codebeaver.IR.TypeProjection.Tutorial*.
+
 I will do a type projection on the incident class, hence we will need to
 reference the MP where this is defined. If you don\'t know this there
 are a few ways to find out. I prefer using powershell. Open a Service
 Manager Shell which will load the native service manager powershell
-module. Enter\
-\
+module. Enter
 
-<div>
+
+```
 
 *Get-SCSMClass -Name \"\*incident\" -ComputerName SM01*
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 This tells it to look for classes that matches \*incident (anything
 followed by incident) and the computername is the name of your
 management server.
 
-</div>
+```
 
-<div>
+```
 
 This will give you three results. We are looking for the
 *System.WorkItem.Incident* class. Repeat the command with this more
 specific name. To get the management pack we can write
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 *(Get-SCSMClass -Name \"System.WorkItem.Incident\" -ComputerName
 SM01).getmanagementpack()*
 
-</div>
+```
 
-<div>
+```
 
-*\
+*
 *
 
-</div>
+```
 
-<div>
+```
 
 Which tells us that the incident class is found in the
 System.WorkItem.Incident.Library management pack.
 
-</div>
+```
 
-<div>
+```
 
 I find the easiest approach is to go to C:\\Program Files
 (x86)\\Microsoft System Center 2012\\Service Manager Authoring (or where
@@ -81,104 +81,104 @@ ever you have installed the authoring console), and then simply search
 for the managegement pack. When found right click and \"open file
 location\". Copy the path.
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Now back in visual studio right click the references and \"Add
 reference\...\"
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
+
+```
 
 ::: {.separator}
 [![](//2.bp.blogspot.com/-P_evR856A90/VZEdZhT84XI/AAAAAAAASlU/I2EAXxJSn-g/s640/addref.png){width="640"
 height="400"}](//2.bp.blogspot.com/-P_evR856A90/VZEdZhT84XI/AAAAAAAASlU/I2EAXxJSn-g/s1600/addref.png)
 :::
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Click the browse tab and paste in the path. Scroll and look for
 the System.WorkItem.Incident.Library.mp file. Now that it is added we
 can reference it using an auto genereated alias.
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Now right click the project and select *Add-\> New item\...* Pick the
 \"empty management pack fragment\". I will name
 mine *IncidentTypeProjection.mpx*.
 
-</div>
+```
 
-<div>
+```
 
 You will be presented with some xml. Type \< and a number of possible
 XML-tags are suggested.
 
-</div>
+```
 
 ::: {.separator}
 [![](//1.bp.blogspot.com/-3EcLZP3hh48/VZEfocru3mI/AAAAAAAASlg/xGpK1F71gx0/s640/xml.png){width="640"
 height="418"}](//1.bp.blogspot.com/-3EcLZP3hh48/VZEfocru3mI/AAAAAAAASlg/xGpK1F71gx0/s1600/xml.png)
 :::
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 It will narrow down the list as you type. We want TypeDefinitions, and
 inside that EntityTypes, and finally inside that TypeProjections. VSAE
 will mostly present you with valid XML. 
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
+
+```
 
 ::: {.separator}
 [![](//1.bp.blogspot.com/-tiyXXHNHz_Q/VZEgWvtG_UI/AAAAAAAASlo/dkQZSkB1WUw/s640/xml2.png){width="640"
 height="418"}](//1.bp.blogspot.com/-tiyXXHNHz_Q/VZEgWvtG_UI/AAAAAAAASlo/dkQZSkB1WUw/s1600/xml2.png)
 :::
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Inside the TypeProjections tag we enter TypeProjection and then a space
 and you get to pick amongst a number of possible attributes for that
@@ -191,32 +191,32 @@ we enter SWIL!System.WorkItem.Incident, and we can finish the type
 projection with a \>. This is a good time to build (ctrl+shift+b).
 Resolve any errors (there should be none).
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
+
+```
 
 ::: {.separator}
 [![](//2.bp.blogspot.com/-QE1yZNecm6E/VZEjBxQL66I/AAAAAAAASl0/dClGVmqtds8/s640/xml3.png){width="640"
 height="400"}](//2.bp.blogspot.com/-QE1yZNecm6E/VZEjBxQL66I/AAAAAAAASl0/dClGVmqtds8/s1600/xml3.png)
 :::
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
 
-\
+```
 
-</div>
 
-<div>
+
+```
+
+```
 
 Now we must add a component to the type projection. You must provide the
 component with an alias (type in anything). the Path is a bit more
@@ -226,62 +226,62 @@ projections](http://codebeaver.blogspot.dk/2014/04/nested-type-projections-in-sc
 before you continue reading. To get the relationship part we use the
 same trick as we did for getting the class. Here is a little help:
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 *Get-SCSMRelationshipClass -Name \"created\" -ComputerName SM01 \| fl
 Name*
 
-</div>
+```
 
-<div>
+```
 
-*\
+*
 *
 
-</div>
+```
 
-<div>
+```
 
 My component ends up looking
 
-</div>
+```
 
     <Component Alias="IsCreatedBy" Path="$Target/Path[Relationship='SWL!System.WorkItemCreatedByUser']$"/>
 
-<div>
+```
 
 And no errors when building! Be really carefull with \$ and \' and \[\]
 at the right places.
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 We also need to add a section of display strings to finish up. After the
 closing TypeDefinitions add a LanguagePacks tag. It will end up looking
 like this
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
+
+```
 
       <LanguagePacks>
         <LanguagePack ID="ENU" IsDefault="true">
@@ -295,26 +295,26 @@ like this
         </LanguagePack>
       </LanguagePacks>
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Note that the LanguagePack ID must a valid ID. I haven\'t found a table
 with all possible IDs (post in the comments below if you do).
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 We are almost there. Go to properties of the project and in the build
 tab check \"generate sealed and signed management pack\". Browse for a
@@ -322,9 +322,9 @@ key file and select your snk-file (if you don\'t know this part read
 [this](http://scsmnz.net/sealing-a-management-pack-using-fastseal-exe/)
 to get up to speed - you just need to read the part on Create your SNK).
 
-</div>
+```
 
-<div>
+```
 
 In the Management group tab click Add and enter your Service Manager
 Management Server (you only need add it once), if already added select
@@ -332,40 +332,40 @@ it and click \"*Set as Default*\". Finally in the Deployment tab under
 \"start action\" select \"Deploy projects to default management group
 only\".
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 Build again and make sure there are not errors. Now we can deploy the
 type projection directly to the server by hitting F5. That is pretty
 sweet and can really speed up your development even for basic stuff such
 as type projections.
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
 
-<div>
+```
+
+```
 
 The entirety of the fragment looks as below
 
-</div>
+```
 
-<div>
+```
 
-\
 
-</div>
+
+```
 
     <ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <TypeDefinitions>
@@ -394,6 +394,6 @@ The entirety of the fragment looks as below
       </LanguagePacks>
     </ManagementPackFragment>
 
-<div>
+```
 
-</div>
+```

@@ -1,6 +1,6 @@
-I currently have a million tabs open with all kinds of goodie
-blog-posts. To make it easier for me (and hopefully also others).\
-\
+﻿I currently have a million tabs open with all kinds of goodie
+blog-posts. To make it easier for me (and hopefully also others).
+
 
 -   This is pretty much a must read: [How to Add the Service Manager
     Authoring Tool's Form Controls to Visual
@@ -61,6 +61,6 @@ blog-posts. To make it easier for me (and hopefully also others).\
 -   When you have the time, look these
     through: <http://scsmnz.net/tag/scsm/>
 
-<div>
+```
 
-</div>
+```

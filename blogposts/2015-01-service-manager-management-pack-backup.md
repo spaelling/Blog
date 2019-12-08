@@ -1,14 +1,14 @@
-Are you doing Management Pack backups? Well, you should. Schedule the
-script to run daily (during off-hours).\
-\
+﻿Are you doing Management Pack backups? Well, you should. Schedule the
+script to run daily (during off-hours).
+
 I have had this lying around for a while now, and thought I would share.
 Script as follows (Download
 [here](https://gallery.technet.microsoft.com/Service-Manager-Management-e5dd00ec)
-- please rate):\
-\
-\
+- please rate):
 
-<div>
+
+
+```
 
 +-----------------------------------+-----------------------------------+
 |       1                           |                                   |
@@ -278,8 +278,8 @@ Script as follows (Download
 |                                   |     }                             |
 +-----------------------------------+-----------------------------------+
 
-</div>
+```
 
-<div>
+```
 
-</div>
+```

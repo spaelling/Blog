@@ -1,11 +1,11 @@
-Shamelessly exploiting my own personal blog to promote an event at work.
+﻿Shamelessly exploiting my own personal blog to promote an event at work.
 Want to know more about Azure? This is the event for you. [Sign
 up](http://lp.lumagate.com/cloud-os-summit-2015) before your neighbor.
-There will be free snacks!\
-\
-Leave a comment below if you do. That will get my boss off my back ;)\
-\
-For ease of reference:\
+There will be free snacks!
+
+Leave a comment below if you do. That will get my boss off my back ;)
+
+For ease of reference:
 
 -   Sweden/Stockholm: March 24th
     -   Microsoft, Finlandsgatan 30, 164 74 Kista
@@ -16,6 +16,6 @@ For ease of reference:\
 -   Norway/Oslo: April 9th
     -   Microsoft, Lysaker Torg 45, 1366 Lysaker
 
-<div>
+```
 
-</div>
+```
