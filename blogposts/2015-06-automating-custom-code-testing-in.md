@@ -81,5 +81,6 @@ Script as follows, and download it
     # start console
     Write-Debug "Starting console..."
     & "C:\Program Files\Microsoft System Center 2012 R2\Service Manager\Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe"
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

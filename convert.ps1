@@ -93,6 +93,12 @@ foreach ($BlogPost in $BlogPosts) {
     $Content | Out-File -FilePath $FilePath -Encoding utf8
 }
 
+$AdvBlock = @"
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+
+"@
+
 $OutDirConverted = (Resolve-Path $OutDirConverted).Path
 foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     Write-Host "Converting '$($Doc.FullName)' to markdown"
@@ -101,7 +107,13 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     
     <# POST CLEANUP
         TODO: 
-        
+        remove empty codeblocks:
+        ```
+        ```
+        image references are messed up, may be an artefact from html
+        ::: {.separator}
+[![](link.to.png){width="640" height="176"}](link.to.png)
+:::
     #>
     
     $Content = Get-Content -Path $FilePath
@@ -135,6 +147,8 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
                 if($ConsecutiveBlankLinesCount -gt 1)
                 {
                     $SkipLine = $true        
+                    # decrement now that we are skipping the line
+                    $ConsecutiveBlankLinesCount -= 1
                 }
             }
             
@@ -154,5 +168,12 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
         }
         $SkipLine = $false
     }
+    # the weird empty codeblock is always?? in the end of the doc (was an empty DIV block)
+    if($NewContent[-1] -eq '```' -and $NewContent[-2] -eq '```')
+    {
+        $NewContent = $NewContent[0..($NewContent.Length-3)]
+    }
+    # add some advertising for this script
+    $NewContent += $AdvBlock
     $NewContent | Out-File -FilePath $FilePath -Encoding utf8
 }

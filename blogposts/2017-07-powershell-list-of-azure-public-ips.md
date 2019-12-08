@@ -6,5 +6,6 @@ network interface. PowerShell to the rescue.
 onfiguration.Id -like '*Microsoft.Network/networkinterfaces*'} | Select-Object -ExpandProperty IpAddress | ForEach-Objec
 t {"$_,"}) -join '' | clip
 ```
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

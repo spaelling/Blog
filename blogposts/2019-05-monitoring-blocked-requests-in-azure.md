@@ -470,5 +470,6 @@ let rule_mapping = dynamic(
 "932140" : "Remote Command Execution = Windows FOR/IF Command Found"
 });
 ```
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

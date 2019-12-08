@@ -8,5 +8,6 @@ other ARM template editor of choice.
 Go grab it
 [here](https://gallery.technet.microsoft.com/Generate-ARM-template-c7e974b3) -
 remember to rate if you like it :D
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

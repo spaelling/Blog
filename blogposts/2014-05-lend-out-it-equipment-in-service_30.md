@@ -314,5 +314,6 @@ In part 2b I will be adding an offering on the portal allowing a user to
 reserve the item. I may also elaborate abit on the current solution (ex.
 returning items in bulks).
 Full source-code available [here](http://filebin.ca/1ODFsHFJHTEn).
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

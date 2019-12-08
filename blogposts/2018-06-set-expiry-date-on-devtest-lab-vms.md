@@ -64,5 +64,6 @@ $VM | ForEach-Object {("$($_.Name)".Split('/') | Select-Object -Last 1)} | Set-A
 -LabResourceGroupName $Lab.ResourceGroupName `
 -ExpiredUTCDate (Get-Date).AddDays($AddDays)
 ```
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

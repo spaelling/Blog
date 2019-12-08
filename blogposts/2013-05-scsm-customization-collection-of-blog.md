@@ -59,5 +59,6 @@ blog-posts. To make it easier for me (and hopefully also others).
     provides a basic understanding on a very important topic
 -   When you have the time, look these
     through: <http://scsmnz.net/tag/scsm/>
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

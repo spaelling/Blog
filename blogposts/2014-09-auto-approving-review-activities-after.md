@@ -29,5 +29,6 @@ using the SCSM SDK, and one on mapping support groups intelligently (and
 automatically) to SCOM generated incidents using a fancy script and an
 excel sheet!
 I just need some time to polish both posts. Hope to get them out soon.
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

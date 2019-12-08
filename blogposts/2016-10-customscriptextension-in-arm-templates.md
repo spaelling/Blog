@@ -26,5 +26,6 @@ $SASToken = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64S
 Problem solved!
 Seems to me that there is something odd in how the custom script
 extension calls PowerShell in this particular instance.
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

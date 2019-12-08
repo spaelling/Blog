@@ -13,5 +13,6 @@ For ease of reference:
     -   Microsoft, Tuborg Boulevard 12, 2900 Hellerup
 -   Norway/Oslo: April 9th
     -   Microsoft, Lysaker Torg 45, 1366 Lysaker
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

@@ -91,5 +91,6 @@ $DefaultProfile = Login-AzureRmAccount -Tenant $TenantId -AccountId $env:Applica
 ```
 Note that this may fail if the MSI has access to no resources in any
 subscription. Anyways, it would be rather pointless if it does not.
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

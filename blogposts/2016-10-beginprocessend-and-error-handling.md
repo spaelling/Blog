@@ -236,5 +236,6 @@ The output is:
 I hope this helps understanding how some of the *begin..process..end*
 function works with regards to errors and error handling. I know I will
 be returning to this from time and again :D
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

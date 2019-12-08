@@ -158,5 +158,6 @@ not the solo-slacker). And still, limited by what APIs are offered by
 the provider in the other end. They will not be willing to just fully
 let go and have users leave their platform entirely.
 ```
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

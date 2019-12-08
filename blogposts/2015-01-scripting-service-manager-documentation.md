@@ -273,5 +273,6 @@ It also includes code on how to do the same with Request Offerings.
 I also found
 this: <http://www.buchatech.com/2015/03/service-manager-discovery-report/> -
 check it out.
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

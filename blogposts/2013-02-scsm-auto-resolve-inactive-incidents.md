@@ -63,5 +63,6 @@ formatted using <http://codeformatter.blogspot.dk/>
      # create the object criteria  
      $criteria = new-object $cType $cString, $Class  
      Get-SCSMObject -criteria $criteria | Set-SCSMObject -PropertyHashtable $PropertyHash  
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

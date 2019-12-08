@@ -82,5 +82,6 @@ Out-GridView -Title "Select files to delete (example 3)" -PassThru | `
 Get-Self | `
 Remove-Item -WhatIf
 ```
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+

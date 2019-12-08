@@ -42,5 +42,6 @@ are related to the category that you selected. This is just the tip of
 the iceberg. PowerBI can do much more than that!
 Finally you can figure out what your wife is spending all your money on
 ;)
-```
-```
+
+Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+
