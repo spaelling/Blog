@@ -10,20 +10,16 @@ I wont go into details on how to use Test-Connection, there are plenty
 of ressources doing just that. But I recently discover a very cool way
 to use Test-Connection against a large number of servers. And as they
 say, A script is worth a thousand words:
-
-
     function Check-Online
     {
         param(
             $ComputerName
             )
-
         Begin
         {
             # put live servers into this list
             $Script:serverlist = @()
         }
-
         Process
         {
             If (Test-Connection -Count 1 -ComputerName  $_ -TimeToLive 5 -asJob | 
@@ -39,25 +35,18 @@ say, A script is worth a thousand words:
             return $Script:serverlist
         }
     }
-
     # get computer names from hyper-v
     $ComputerNames = Get-VM | Select-Object -ExpandProperty Name
     # check which are online
     $ComputerNames | Check-Online
-
-
 Simply feed the Check-Online function a list of computernames (IPs
 should work just as well) and it will return a list of online servers
 within seconds.
-
 I think credit for the original code goes to my
 [Lumagate](http://www.lumagate.com/) colleague [Claus
 Nielsen](http://www.xipher.dk/WordPress/) who just happens to be a
 Powershell MVP.
-
 Download script from [Technet
 gallery](https://gallery.technet.microsoft.com/Get-a-list-of-online-ea97e7f7).
-
 ```
-
 ```

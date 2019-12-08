@@ -1,7 +1,6 @@
 ﻿I currently have a million tabs open with all kinds of goodie
 blog-posts. To make it easier for me (and hopefully also others).
 
-
 -   This is pretty much a must read: [How to Add the Service Manager
     Authoring Tool's Form Controls to Visual
     Studio](http://blog.concurrency.com/infrastructure/how-to-add-the-service-manager-authoring-tools-form-controls-to-visual-studio/)
@@ -60,7 +59,5 @@ blog-posts. To make it easier for me (and hopefully also others).
     provides a basic understanding on a very important topic
 -   When you have the time, look these
     through: <http://scsmnz.net/tag/scsm/>
-
 ```
-
 ```

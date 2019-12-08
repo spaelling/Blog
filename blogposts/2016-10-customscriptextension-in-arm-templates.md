@@ -8,40 +8,23 @@ into *C:\\Packages\\Plugins\\Microsoft.Compute.CustomScriptExtension\\1.8\\Runt
 I found that it was a sensible solution. I could also copy the
 \"*commandToExecute*\" and run it and get the expected result. In the
 variables section I added a:
-
-
-
 ```
-
-      "variables": {
-        "singlequote": "'",
-
+"variables": {
+"singlequote": "'",
 ```
-
-
 And then put single quotes around the *parameters(\'SASToken\')*. But no
 dice. The token was still getting truncated, this time with a \'in
 front\...
-
 So I decided to get rid of the \'&\', at least temporarily. base64
 encoding to the rescue. And Luckily there is an ARM template function
 for [just
 that](https://azure.microsoft.com/en-us/documentation/articles/resource-group-template-functions/#base64).
 In the script I then added:
-
-
 ```
-
-    $SASToken = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($SASToken))
-
+$SASToken = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($SASToken))
 ```
-
-
 Problem solved!
-
 Seems to me that there is something odd in how the custom script
 extension calls PowerShell in this particular instance.
-
 ```
-
 ```

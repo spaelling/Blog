@@ -10,180 +10,94 @@ support group should handle which alert.
 
 I may (quite possibly) be missing a few details in the following, so
 feel free to post a comment below.
-
 My approach is similar to how [ip
 tables](http://en.wikipedia.org/wiki/Iptables) work. A list of rules
 where one starts from the top going down until a rule criteria matches a
 given alert. An [example](//goo.gl/99u4eh) could look like this where
 each row corresponds a rule.
-
 Index
-
 SCSM\_SG
-
 Tag
-
 Rule\_ID
-
 MP\_name
-
 Group
-
 Comment
-
 1
-
 SG1
-
 b59f78ce-c42a-8995-f099-e705dbb34fd4
-
 Health Service Heartbeat Failure
-
 2
-
 SG2
-
 308c0379-f7f0-0a81-a947-d0dbcf1216a7
-
 Failed to Connect to Computer
-
 3
-
 SG2
-
 Microsoft.Windows.\*.Cluster.Management.Monitoring
-
 Cluster
-
 4
-
 SG2
-
 Microsoft.Windows.Server.\*
-
 OS
-
 5
-
 SG2
-
 Microsoft.SystemCenter.2007
-
 OS
-
 6
-
 SG1
-
 Microsoft.SystemCenter.ServiceManager.Monitoring
-
 OS
-
 7
-
 SG2
-
 CB - Sharepoint servers
-
 Sharepoint
-
 8
-
 SG2
-
 Microsoft.SharePoint.\*
-
 Sharepoint
-
 9
-
 SG1
-
 Microsoft.Windows.FileServer.\*
-
 File Service
-
 10
-
 SG2
-
 Microsoft.Exchange.Server.\*
-
 Exchange
-
 11
-
 SG2
-
 Microsoft.SystemCenter.2012.Orchestrator
-
 System Center
-
 12
-
 SG1
-
 Microsoft.SystemCenter.OperationsManager.Infra
-
 System Center
-
 13
-
 SG2
-
 Microsoft.SystemCenter.OperationsManager.DataAccessService
-
 System Center
-
 14
-
 SG2
-
 Microsoft.SystemCenter.Apm.Infrastructure.Monitoring
-
 System Center
-
 15
-
 SG2
-
 Microsoft.SystemCenter.Apm.Infrastructure
-
 System Center
-
 16
-
 SG2
-
 Microsoft.SQLServer.\*
-
 SQL
-
 17
-
 SG2
-
 Microsoft.SystemCenter.Apm.NTServices
-
 Application Performance
-
 18
-
 SG1
-
 Microsoft.SystemCenter.Apm.Web
-
 Application Performance
-
 19
-
 SG3
-
 \*
-
 Catch all
-
-
 Where index defines the priority of the alert, SCSM\_SG is the support
 group the alert (incident) should be mapped to, Tag, Rule\_ID, MP\_name,
 Group are alert criterias and comment is well, a comment for the reader
@@ -200,7 +114,6 @@ Note that reach row/rule should only contain a single a single criteria
 as the logic cannot handle multiple criteria (it should be fairly
 trivial to edit the script to allow for multiple criteria on a single
 rule).
-
 -   Tag is a well, tag, that is defined in the description of an alert,
     allowing custom alerts to be tagged by adding \#tag:mytag to the end
     of the alert description. This allows alerts defined in the same
@@ -212,11 +125,8 @@ rule).
 -   Group is a computer group. Some monitoring objects will be child
     monitoring objects of a given computer group, ie. a disk monitor in
     the CB - Sharepoint Servers group.
-
-
 The script is listed below (this is a long one, you may want to get a
 cup of coffee/mug of beer before proceeding).
-
 *\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#*
 *\# Processes alerts in SCOM and marks the alert as ready to be*
 *\# forwarded to Service Manager.*
@@ -433,7 +343,6 @@ SCSM\_SG*
 *        }*
 *    }*
 *
-
     \# \* COMPUTER GROUP MATCH \* \#*
 *
     \$ComputerGroupMatch = @()*
@@ -671,7 +580,6 @@ here)*
 *    \$MyGroups = Get-SCOMGroup -DisplayName \"CB - \*\" -ComputerName
 \$SCOMComputerName \| select -ExpandProperty DisplayName*
 *
-
     \# Get number of new alerts with critical severity*
 *    \$AlertCount = (\[array\](Get-SCOMAlert -ComputerName
 \$SCOMComputerName -ResolutionState (0) -Severity 2)).Count*
@@ -717,7 +625,6 @@ failed\`nException message: \$(\$\_.Exception.Message)\" 704 \"Error\"*
 *
         \$LoopEnd = (Get-Date)*
 *
-
         \# adjust for time spent forwarding alerts*
 *        \$SleepTimeInSeconds = \$SLEEPTIME - (New-TimeSpan -Start
 \$LoopStart -End \$LoopEnd).TotalSeconds*
@@ -742,13 +649,11 @@ time*
 *    Start-Sleep -s \$SleepTimeInSeconds*
 *}*
 *Until ((Get-Date).AddMinutes(-\$LOOPTIME) -gt \$Starttime)*
-
 Note that the script does not forward alerts as such, it simply updates
 the custom fields on the alert and sets the status to a custom alert
 status that a SCOM connector should then pick up on and lift the alert
 to Service Manager. This is a fairly trivial setup I will not be
 covering here.
-
 Now that the alert is updated in a way that allows us to identify which
 support group should be assigned to the incident we need to do the
 mapping. One way is to create a bunch of templates and use the SCOM
@@ -764,10 +669,8 @@ and then update the Support Group field with the value from custom field
 3 (this is the field where the script puts the support group). Note that
 the support group must match one of the support groups listed in the
 incident tier queue list.
-
 That\'s it. The alert has gone all the way from SCOM to an incident and
 the proper support group is assigned.
-
 Obviously the alert mapping script must be scheduled to run
 automatically. It is designed in a way so that one can run it of 2 (or
 more) SCOM management servers but at different times. The script is set
@@ -781,12 +684,8 @@ that runs every 2 minutes (replicating the loop in the script).
 The script requires more or less admin rights on SCOM. I was having
 issues on running it with anything less (on top of needing some rights
 in the context of running a scheduled task).
-
 *I have had this lying around as draft for weeks now. I have a million
 other things to do, so little time to keep polishing before publishing
 :D*
-
-
 ```
-
 ```

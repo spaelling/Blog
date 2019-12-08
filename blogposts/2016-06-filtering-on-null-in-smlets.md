@@ -3,11 +3,7 @@ to haunt me from time to time is filtering on NULL. I always forget how,
 so now I will document it, once and for all!
 
 A script speaks a thousand words:
-
-
-
 ```
-
 +-----------------------------------+-----------------------------------+
 |     1                             |     $IRClass = Get-SC             |
 |     2                             | SMClass system.workitem.incident$ |
@@ -26,9 +22,6 @@ A script speaks a thousand words:
 |                                   | et-SCSMObject -Class $MClassExt - |
 |                                   | Filter "CustomerProperty -ISNULL" |
 +-----------------------------------+-----------------------------------+
-
 ```
-
 ```
-
 ```

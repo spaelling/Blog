@@ -8,16 +8,12 @@ Powershell.
 The script as follows ([Download from
 Technet](https://gallery.technet.microsoft.com/Reattaching-Drives-on-VMs-3b038909)),
 formatted using <https://tohtml.com/powershell/>:
-
-
     $States = ( [Microsoft.HyperV.PowerShell.VMState]::Off, 
                 [Microsoft.HyperV.PowerShell.VMState]::OffCritical
               )
-
     $VMs = Get-VM | ? {$_.State -in $States}
     $DriveCount = ($VMs | Get-VMHardDiskDrive).Count
     $Counter = 0
-
     foreach($VM in $VMs)
     {
         $Drives = $VM | Get-VMHardDiskDrive
@@ -30,12 +26,10 @@ formatted using <https://tohtml.com/powershell/>:
             $Path = $Drive.Path
             $SupportPersistentReservations = $Drive.SupportPersistentReservations
             $ControllerType = $Drive.ControllerType
-
             Write-Progress  -Activity "Reattaching drives" `
                             -Status "Removing $Path from $($VM.Name)" `
                             -PercentComplete (100*$Counter/$DriveCount) 
             Remove-VMHardDiskDrive -VMHardDiskDrive $Drive
-            
             if($SupportPersistentReservations)
             {
                 # Shared vhdx
@@ -54,13 +48,10 @@ formatted using <https://tohtml.com/powershell/>:
                                     -Path $Path `
                                     -ControllerType $ControllerType
             }
-            
             Write-Progress  -Activity "Reattaching drives" `
                             -Status "Reattached $Path to $($VM.Name)" `
                             -PercentComplete (100*$Counter/$DriveCount)
         }
     }
-
 ```
-
 ```

@@ -5,11 +5,7 @@ I have had this lying around for a while now, and thought I would share.
 Script as follows (Download
 [here](https://gallery.technet.microsoft.com/Service-Manager-Management-e5dd00ec)
 - please rate):
-
-
-
 ```
-
 +-----------------------------------+-----------------------------------+
 |       1                           |                                   |
 |       2                           |    ############################## |
@@ -277,9 +273,6 @@ Script as follows (Download
 |                                   | g "Backup done" 604 "Information" |
 |                                   |     }                             |
 +-----------------------------------+-----------------------------------+
-
 ```
-
 ```
-
 ```

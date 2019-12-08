@@ -101,13 +101,17 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     
     <# POST CLEANUP
         TODO: 
-        *pandoc still leaves some stray DIV tags around code
-        *Some lines ends with \
-        some IMG tags get garbled
+        
     #>
     
     $Content = Get-Content -Path $FilePath
     $NewContent = @()
+    # keep track of when we are in a codeblock
+    $InCodeBlock = $false
+    # we can skip some lines
+    $SkipLine = $false
+    # count blank consecutive lines
+    $ConsecutiveBlankLinesCount = 0
     foreach ($Line in $Content) {
         # if ending with \
         if($Line -like "*\")
@@ -115,14 +119,40 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
             # remove last occurence of \
             $Line = $Line -replace "(.*)\\(.*)", '$1$2'
         }
+        if($InCodeBlock)
+        {
+            # trim line if in code block
+            $Line = $line.Trim()
+            # skip the line if blank in a code block
+            $SkipLine = $Line.Length -eq 0
+        }
+        else
+        {
+            if($line.Trim().Length -eq 0)
+            {
+                $ConsecutiveBlankLinesCount += 1
+                # skip the line if this was the second blank line
+                if($ConsecutiveBlankLinesCount -gt 1)
+                {
+                    $SkipLine = $true        
+                }
+            }
+            
+        }
         # we replace DIV tags with ``` - try to target just single lines with only a DIV tag (start/end tag)
         if($Line.Trim() -like "<*DIV>")
         {
+            # if already in a code block we are no longer
+            $InCodeBlock = -not $InCodeBlock
             # remove last occurence of \
             $Line = $Line -replace "<DIV>", '```' -replace "</DIV>", '```'
-        }        
+        }
 
-        $NewContent += $Line
+        if(-not $SkipLine)
+        {
+            $NewContent += $Line
+        }
+        $SkipLine = $false
     }
     $NewContent | Out-File -FilePath $FilePath -Encoding utf8
 }
