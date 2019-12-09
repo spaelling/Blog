@@ -49,7 +49,7 @@ something out that you feel is worth mentioning.
 ```
 ```
 ```
-[Service Manager Performance
+Service Manager Performance
 (Technet)](http://technet.microsoft.com/en-us/library/hh519624.aspx)
 ```
 ```
@@ -77,7 +77,7 @@ are in base 10) by default.*
 ```
 ```
 ```
-[Troubleshooting Workflow Performance and Delays (By Travis
+Troubleshooting Workflow Performance and Delays (By Travis
 Wright)](http://blogs.technet.com/b/servicemanager/archive/2013/01/14/troubleshooting-workflow-performance-and-delays.aspx)
 ```
 ```
@@ -96,7 +96,7 @@ Also more on this further down.
 ```
 ```
 ```
-[Update Rollup 2 for System Center 2012 R2 Service
+Update Rollup 2 for System Center 2012 R2 Service
 Manager](http://www.microsoft.com/en-us/download/details.aspx?id=42551)
 ```
 ```
@@ -109,7 +109,7 @@ performance issues with the console.
 ```
 ```
 ```
-[Service Manager - Performance and Scalability best practices (Talk by
+Service Manager - Performance and Scalability best practices (Talk by
 Travis
 Wright)](http://channel9.msdn.com/Series/SCUE2014/Service-Manager-Performance-and-Scalability-best-practices)
 ```
@@ -135,7 +135,7 @@ not out-of-this-world hardware, with proper configuration.
 ```
 ```
 ```
-[Configuring Service Manager for Performance and Scale (By Nathan
+Configuring Service Manager for Performance and Scale (By Nathan
 Lasnoski)](http://www.concurrency.com/infrastructure/configuring-service-manager-for-performance-and-scale/)
 ```
 ```
@@ -146,12 +146,12 @@ Just watch it already!
 ```
 ```
 ```
-[FAQ: A Collection of Tips to Improve System Center 2012 Service Manager
+FAQ: A Collection of Tips to Improve System Center 2012 Service Manager
 Performance (by Peter
 Zerger)](http://www.systemcentercentral.com/faq-a-collection-of-tips-to-improve-service-manager-performance/)
 He did a collection of performance hints, so I will include him in this
 collection :D
-[Service Manager slow perfomance (By Mihai
+Service Manager slow perfomance (By Mihai
 Sarbulescu)](http://blogs.technet.com/b/mihai/archive/2012/07/13/service-manager-slow-perfomance.aspx)
 An elaboration on what Travis talked about troubleshooting workflows and
 delays (linked earlier in this post).
@@ -159,7 +159,7 @@ delays (linked earlier in this post).
 ```
 ```
 ```
-[Poor Performance on Service Manager 2012? (by Thomas
+Poor Performance on Service Manager 2012? (by Thomas
 Mortsell)](http://systemcenterblogs.com/2014/06/10/poor-performance-on-service-manager-2012/)
 Some cool tips, especially on the SQL backend. I haven\'t heard about
 splitting the SM DB into multiple files (across multiple disks,
@@ -170,7 +170,7 @@ That was it. Remember to comment below. I may do a post someday with
 performance optimizations that might as well be done as part of a
 Service Manager installation. Or in most cases some easy to do
 post-install optimizations.
-[Service Manager Request Query Result Filtering (By Nathan
+Service Manager Request Query Result Filtering (By Nathan
 Lasnoski)](http://www.concurrency.com/infrastructure/service-manager-request-query-result-filtering/)
 Keep this in mind if you are using query results in your request
 offerings. Not only a performance optimizations, but there are a
@@ -180,5 +180,5 @@ confuse the requester.
 ```
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

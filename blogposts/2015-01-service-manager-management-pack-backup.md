@@ -3,7 +3,7 @@ script to run daily (during off-hours).
 
 I have had this lying around for a while now, and thought I would share.
 Script as follows (Download
-[here](https://gallery.technet.microsoft.com/Service-Manager-Management-e5dd00ec)
+here](https://gallery.technet.microsoft.com/Service-Manager-Management-e5dd00ec)
 - please rate):
 ```
 +-----------------------------------+-----------------------------------+
@@ -275,5 +275,5 @@ Script as follows (Download
 +-----------------------------------+-----------------------------------+
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

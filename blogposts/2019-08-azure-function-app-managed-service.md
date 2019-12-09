@@ -45,5 +45,5 @@ Running PowerShell in Azure Function App has come a long way. With the
 new **Push-OutputBinding** it is even easier than before to put the
 result of a function execution into a queue, table storage, etc.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

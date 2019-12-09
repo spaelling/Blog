@@ -28,5 +28,5 @@ Download the script from [Technet
 Gallery](https://gallery.technet.microsoft.com/Submit-SCSM-Request-22b0488c).
 Remember to rate!
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -11,13 +11,13 @@ what it will do
 ```
 That almost gets you all the way. You will have to do the clicking
 yourself. You can then debug the hell out of your code following
-[this](http://scsmlab.com/2013/04/09/debugging-custom-scsm-form-in-visual-studio/).
+this](http://scsmlab.com/2013/04/09/debugging-custom-scsm-form-in-visual-studio/).
 ```
 ```
 ```
 ```
 Script as follows, and download it
-[here](https://gallery.technet.microsoft.com/Automating-Custom-Code-bcfdc401).
+here](https://gallery.technet.microsoft.com/Automating-Custom-Code-bcfdc401).
 ```
 ```
 ```
@@ -82,5 +82,5 @@ Script as follows, and download it
     Write-Debug "Starting console..."
     & "C:\Program Files\Microsoft System Center 2012 R2\Service Manager\Microsoft.EnterpriseManagement.ServiceManager.UI.Console.exe"
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

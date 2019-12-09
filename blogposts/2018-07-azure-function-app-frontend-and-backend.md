@@ -7,12 +7,7 @@ one must login with Azure AD to authenticate one self (use the
 
 Once configured add your users to the *Managed application* in the
 \"Users and groups\" tab.
-::: {.separator}
-[![](https://3.bp.blogspot.com/-CTvkcwfLKRI/W1tiWwkNkCI/AAAAAAAAlCs/lJ9igVQM7mIqqSCgwM79zhnJdjYH4qtkgCLcBGAs/s640/blog1.PNG){width="640"
-height="338"}](https://3.bp.blogspot.com/-CTvkcwfLKRI/W1tiWwkNkCI/AAAAAAAAlCs/lJ9igVQM7mIqqSCgwM79zhnJdjYH4qtkgCLcBGAs/s1600/blog1.PNG)
-:::
-::: {.separator}
-:::
+![](https://3.bp.blogspot.com/-CTvkcwfLKRI/W1tiWwkNkCI/AAAAAAAAlCs/lJ9igVQM7mIqqSCgwM79zhnJdjYH4qtkgCLcBGAs/s640/blog1.PNG)
 These users will be allowed access to all the functions in your Function
 App. That seems pretty secure! You can even add Conditional Access to
 the application for added security.
@@ -29,10 +24,7 @@ Create 2 function apps and a key vault. In the key vault create a secret
 called encryptionKey, the value should be 32 characters long (256 bits),
 and the other is named to match the function and the value being the
 functions key (found in the *Manage* tab of a function, named default).
-::: {.separator}
-[![](https://2.bp.blogspot.com/-CHiA6D538bE/W1t2pU3WfZI/AAAAAAAAlDI/YBBpzuUer_gq5XFdqqpLWGsW-vlWq5-4ACLcBGAs/s640/kv.PNG){width="640"
-height="176"}](https://2.bp.blogspot.com/-CHiA6D538bE/W1t2pU3WfZI/AAAAAAAAlDI/YBBpzuUer_gq5XFdqqpLWGsW-vlWq5-4ACLcBGAs/s1600/kv.PNG)
-:::
+![](https://2.bp.blogspot.com/-CHiA6D538bE/W1t2pU3WfZI/AAAAAAAAlDI/YBBpzuUer_gq5XFdqqpLWGsW-vlWq5-4ACLcBGAs/s640/kv.PNG)
 Next step is to enable *Managed service identity* on both Function Apps.
 You can do this under *platform features*, same place as you find
 *Application settings*. Now you need to note down the application id of
@@ -125,10 +117,7 @@ Out-File -Encoding Ascii -FilePath $res -inputObject $EncryptedOutput
 ```
 Lastly we need to grant access to the secrets in the key vault,
 *Get* operation on secrets is sufficient.
-::: {.separator}
-[![](https://4.bp.blogspot.com/-YWXdVvZQyOA/W1uV3Btp5tI/AAAAAAAAlDU/gWrjrwXEp5MfZ5tMjqSD9-JS45YGQXK5gCLcBGAs/s640/kvaccess.PNG){width="640"
-height="566"}](https://4.bp.blogspot.com/-YWXdVvZQyOA/W1uV3Btp5tI/AAAAAAAAlDU/gWrjrwXEp5MfZ5tMjqSD9-JS45YGQXK5gCLcBGAs/s1600/kvaccess.PNG)
-:::
+![](https://4.bp.blogspot.com/-YWXdVvZQyOA/W1uV3Btp5tI/AAAAAAAAlDU/gWrjrwXEp5MfZ5tMjqSD9-JS45YGQXK5gCLcBGAs/s640/kvaccess.PNG)
 Optionally enable AAD authentication on the frontend Function App before
 running the example, and in that case remember to add your own user!
 For added security you could add a timed trigger function that resets
@@ -138,10 +127,7 @@ of the encryption key as part of the response.
 I also think that you can use service endpoints on the key vault so that
 only these functions are able to retrieve the key in the first place.
 The result should look like this
-::: {.separator}
-[![](https://3.bp.blogspot.com/-2A0dQBIwFig/W1uZeH3lcvI/AAAAAAAAlDg/VnK-LfgXBmgsAgcKCAX-2xDNF5qIqfU6wCLcBGAs/s640/res.PNG){width="640"
-height="174"}](https://3.bp.blogspot.com/-2A0dQBIwFig/W1uZeH3lcvI/AAAAAAAAlDg/VnK-LfgXBmgsAgcKCAX-2xDNF5qIqfU6wCLcBGAs/s1600/res.PNG)
-:::
+![](https://3.bp.blogspot.com/-2A0dQBIwFig/W1uZeH3lcvI/AAAAAAAAlDg/VnK-LfgXBmgsAgcKCAX-2xDNF5qIqfU6wCLcBGAs/s640/res.PNG)
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -1,6 +1,6 @@
 ﻿Just about every IT guy or girl on the planet has used *ping* countless
 of times. With Powershell those days are over: Meet
-[Test-Connection](https://technet.microsoft.com/en-us/library/hh849808.aspx).
+Test-Connection](https://technet.microsoft.com/en-us/library/hh849808.aspx).
 It works just as you would expect and similar to ping, the advantage
 being that you (by default) get an object of type
 \"System.Management.ManagementObject\#root\\cimv2\\Win32\_PingStatus\"
@@ -43,11 +43,11 @@ Simply feed the Check-Online function a list of computernames (IPs
 should work just as well) and it will return a list of online servers
 within seconds.
 I think credit for the original code goes to my
-[Lumagate](http://www.lumagate.com/) colleague [Claus
+Lumagate](http://www.lumagate.com/) colleague [Claus
 Nielsen](http://www.xipher.dk/WordPress/) who just happens to be a
 Powershell MVP.
 Download script from [Technet
 gallery](https://gallery.technet.microsoft.com/Get-a-list-of-online-ea97e7f7).
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

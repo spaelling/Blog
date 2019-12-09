@@ -50,15 +50,12 @@ it I will be using SMA (or die trying).
 Enough talk, more action! First I created the custom form. You can view
 the entire XAML-code [here](http://pastebin.com/wejAntMs).
 It looks like this btw:
-::: {.separator}
-[![](//1.bp.blogspot.com/-5FRUp3B1x9Q/U3H70qV8a0I/AAAAAAAAC6M/6NMQpIXy5JM/s1600/Form1.PNG){width="640"
-height="522"}](//1.bp.blogspot.com/-5FRUp3B1x9Q/U3H70qV8a0I/AAAAAAAAC6M/6NMQpIXy5JM/s1600/Form1.PNG)
-:::
+![](//1.bp.blogspot.com/-5FRUp3B1x9Q/U3H70qV8a0I/AAAAAAAAC6M/6NMQpIXy5JM/s1600/Form1.PNG)
 It seems that there is currently a bug in WPFToolkit where the
 Datepicker resides which makes the \"Show Calendar\" button looks greyed
 out as if it was disabled.
 **Edit:**
-[This](http://www.concurrency.com/blog/show-calendar-button-in-custom-service-manager-forms/)
+This](http://www.concurrency.com/blog/show-calendar-button-in-custom-service-manager-forms/)
 is supposedly a fix to the issue, but the datepickers are still wrong in
 my implementation. Bummer :(
 We will using the form primarily for viewing and not editing. For this
@@ -90,5 +87,5 @@ UpdateSourceTrigger=PropertyChanged}\"/\>*
 ```
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

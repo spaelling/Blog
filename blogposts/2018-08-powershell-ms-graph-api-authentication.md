@@ -14,22 +14,12 @@ For good measure, here is a short guide on getting a working SP. Go to
 Azure AD,-\> App Registrations, and create a new app registration.
 The application type is web app/API, you can put anything in the sign-on
 URL.
-::: {.separator}
-[![](https://1.bp.blogspot.com/-L0q-gDfE_K4/W4A_FLhD8-I/AAAAAAAAlPY/1VIvpySLgtQ3y4DBvdCw_vj7_5JVPwV6QCLcBGAs/s640/newappreg.PNG){width="640"
-height="384"}](https://1.bp.blogspot.com/-L0q-gDfE_K4/W4A_FLhD8-I/AAAAAAAAlPY/1VIvpySLgtQ3y4DBvdCw_vj7_5JVPwV6QCLcBGAs/s1600/newappreg.PNG)
-:::
+![](https://1.bp.blogspot.com/-L0q-gDfE_K4/W4A_FLhD8-I/AAAAAAAAlPY/1VIvpySLgtQ3y4DBvdCw_vj7_5JVPwV6QCLcBGAs/s640/newappreg.PNG)
 This will also create an enterprise application.
 In the settings of the newly registered app click Settings, and under
 API Access click Required permissions. Add a new permission and select
 the Microsoft Graph API, and check off the permissions needed.
-::: {.separator}
-[![](https://1.bp.blogspot.com/-EJO3n4u4O3s/W4A_9Ucqf-I/AAAAAAAAlPg/cA2u4-pguE8h06skrhrJOqASH5giIfqMgCLcBGAs/s640/newperm.PNG){width="640"
-height="394"}](https://1.bp.blogspot.com/-EJO3n4u4O3s/W4A_9Ucqf-I/AAAAAAAAlPg/cA2u4-pguE8h06skrhrJOqASH5giIfqMgCLcBGAs/s1600/newperm.PNG)
-:::
-::: {.separator}
-:::
-::: {.separator}
-:::
+![](https://1.bp.blogspot.com/-EJO3n4u4O3s/W4A_9Ucqf-I/AAAAAAAAlPg/cA2u4-pguE8h06skrhrJOqASH5giIfqMgCLcBGAs/s640/newperm.PNG)
 When done you need to click Grant Permissions.
 Next click Keys. Fill in a description, select when the key should
 expire and click Save. The key will be generated and shown. Save this
@@ -116,5 +106,5 @@ $_.Exception.ErrorDetails.Message
 }
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

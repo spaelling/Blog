@@ -36,7 +36,7 @@ updated the channel.
 ```
 ```
 So far I have been able to link my Gmail to the *message *channel using
-[ifttt.com](http://ifttt.com/). This is one way, meaning I get notified
+ifttt.com](http://ifttt.com/). This is one way, meaning I get notified
 of new email and can see the body of the email. I also would like my
 iMessages in there, but I have yet to find an integration that can do
 this. There are other integrations that I have not tried yet (I just
@@ -48,9 +48,9 @@ dont use alot of messaging apps):
 ```
 Facebook Messenger is not something I use alot, but sometimes. There is
 an integration through
-[Smooch](https://smooch.io/integrations/messenger/), but that seems to
+Smooch](https://smooch.io/integrations/messenger/), but that seems to
 be limited to Facebook Pages (makes sense in a business perspective).
-[Zapier](http://zapier.com/) (has loads of advanced Slack
+Zapier](http://zapier.com/) (has loads of advanced Slack
 integrations) and looks also to target Pages.
 ```
 ```
@@ -159,5 +159,5 @@ the provider in the other end. They will not be willing to just fully
 let go and have users leave their platform entirely.
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

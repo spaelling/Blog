@@ -1,8 +1,4 @@
-﻿::: {.separator}
-:::
-
-::: {.separator}
-:::
+﻿
 I have not been able to find a whole lot of easy accesible information
 (ie. blogposts) on how to do error handling for runbooks in SC
 Orchestrator. After having conversed with Jakob from Coretech
@@ -19,22 +15,12 @@ specific ID. If none is found we wish to log the event.
 ```
 ```
 ```
-::: {.separator}
-[![](//2.bp.blogspot.com/-80SVnc-AGx8/UXBKczMeJMI/AAAAAAAACKs/7JGpKWeMM9I/s400/demo1.png){width="400"
-height="250"}](//2.bp.blogspot.com/-80SVnc-AGx8/UXBKczMeJMI/AAAAAAAACKs/7JGpKWeMM9I/s1600/demo1.png)
-:::
-::: {.separator}
-[![](//3.bp.blogspot.com/-OEI_qfpJbgk/UXBKeOr4gAI/AAAAAAAACK0/z5iX5cv-mfk/s400/demo2.png){width="400"
-height="250"}](//3.bp.blogspot.com/-OEI_qfpJbgk/UXBKeOr4gAI/AAAAAAAACK0/z5iX5cv-mfk/s1600/demo2.png)
-:::
+![](//2.bp.blogspot.com/-80SVnc-AGx8/UXBKczMeJMI/AAAAAAAACKs/7JGpKWeMM9I/s400/demo1.png)
+![](//3.bp.blogspot.com/-OEI_qfpJbgk/UXBKeOr4gAI/AAAAAAAACK0/z5iX5cv-mfk/s400/demo2.png)
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [![](//4.bp.blogspot.com/-qW1abBSCNGc/UXBMAddGTyI/AAAAAAAACLE/fVVdcUdEvi8/s400/demo3.png){width="400" height="250"}](//4.bp.blogspot.com/-qW1abBSCNGc/UXBMAddGTyI/AAAAAAAACLE/fVVdcUdEvi8/s1600/demo3.png)
   *Get SR* will return *sucess* even if no objects was found with the given GUID. The link criteria  logic is a double negative, for which I apologize. These are normally not easy to comprehend.
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-::: {.separator}
-:::
-::: {.separator}
-:::
   ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [![](//2.bp.blogspot.com/-5w1Gr7KuUOg/UXBQA_aH9iI/AAAAAAAACLU/g88YXcvlXE0/s400/demo4.png){width="400" height="250"}](//2.bp.blogspot.com/-5w1Gr7KuUOg/UXBQA_aH9iI/AAAAAAAACLU/g88YXcvlXE0/s1600/demo4.png)
   If no objects are found we log an event.
@@ -49,10 +35,7 @@ another runbook as below.
 ```
 ```
 ```
-::: {.separator}
-[![](//1.bp.blogspot.com/-QqyGG4Dyc2M/UXBRFznrNJI/AAAAAAAACLc/zOIQm0HZYLY/s400/demo5.png){width="400"
-height="250"}](//1.bp.blogspot.com/-QqyGG4Dyc2M/UXBRFznrNJI/AAAAAAAACLc/zOIQm0HZYLY/s1600/demo5.png)
-:::
+![](//1.bp.blogspot.com/-QqyGG4Dyc2M/UXBRFznrNJI/AAAAAAAACLc/zOIQm0HZYLY/s400/demo5.png)
 ```
 ```
 ```
@@ -61,10 +44,7 @@ something like this:
 ```
 ```
 ```
-::: {.separator}
-[![](//3.bp.blogspot.com/-FZWV_S2s4tE/UXBRu-sgg_I/AAAAAAAACLk/3QmZ2ydxwv4/s400/demo6.png){width="400"
-height="250"}](//3.bp.blogspot.com/-FZWV_S2s4tE/UXBRu-sgg_I/AAAAAAAACLk/3QmZ2ydxwv4/s1600/demo6.png)
-:::
+![](//3.bp.blogspot.com/-FZWV_S2s4tE/UXBRu-sgg_I/AAAAAAAACLk/3QmZ2ydxwv4/s400/demo6.png)
 ```
 ```
 ```
@@ -73,12 +53,8 @@ have noticed, the runbook completed with success although we defined no
 Service Request found as a failure. In part 2 (posted soon) I will
 address these issues.
 ```
-::: {.separator}
-:::
-::: {.separator}
-:::
 ```
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

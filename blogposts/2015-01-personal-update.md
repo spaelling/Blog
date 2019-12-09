@@ -1,5 +1,5 @@
 ﻿This blog just broke the 10.000 pageviews, I just broke 1.000 points on
-[Technet](https://social.technet.microsoft.com/profile/anders%20sp%C3%A6lling/),
+Technet](https://social.technet.microsoft.com/profile/anders%20sp%C3%A6lling/),
 and I am starting a new job at [Lumagate](http://www.lumagate.com/) as
 Senior System Center Consultant!
 
@@ -14,5 +14,5 @@ precious plants :D Yes, I have way too many hobbies, and just can\'t
 find time for it all.
 Anyways, thanks for reading.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

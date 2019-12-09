@@ -12,7 +12,7 @@ This is work in progress, so keep comming back :D
 ```
 ```
 ```
-[**SQL**]{style="FONT-SIZE: large"}
+**SQL**]
 ```
 ```
 ```
@@ -48,7 +48,7 @@ parallelism to between 1 and 4 (read more
 [here](http://www.concurrency.com/wp-content/uploads/2013/04/MMS-2013-Service-Manager-Scalability.pptx),
 page 15).
 ```
-[**Service Manager**]{style="FONT-SIZE: large"}
+**Service Manager**]
 ```
 ```
 ```
@@ -124,5 +124,5 @@ gain.
 ```
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -50,5 +50,5 @@ by editing the Dockerfile.
 You can run the container in Azure and there are various services for
 running Docker containers for you.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

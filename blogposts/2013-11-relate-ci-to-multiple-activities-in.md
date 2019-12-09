@@ -2,10 +2,7 @@
 user will select a CI. The CI is attached to the Service Request as a
 Related Item.
 
-::: {.separator}
-[![](//1.bp.blogspot.com/-d0Oexb68cn4/Unk60GoA5RI/AAAAAAAACxc/3BljfSdyl8U/s400/1.png){width="400"
-height="117"}](//1.bp.blogspot.com/-d0Oexb68cn4/Unk60GoA5RI/AAAAAAAACxc/3BljfSdyl8U/s1600/1.png)
-:::
+![](//1.bp.blogspot.com/-d0Oexb68cn4/Unk60GoA5RI/AAAAAAAACxc/3BljfSdyl8U/s400/1.png)
 You also need that CI to be available to some of the activities. The
 scenario is close to mapping prompt outputs from a Request Offering to
 fields in multiple Work Items. Maybe the user entered and ID number of
@@ -13,29 +10,15 @@ sorts which is relevant information for more than one activity in a
 Service Request.
 First create a Service Request Template and add a few activities
 similarly to what has been done below
-::: {.separator}
-[![](//2.bp.blogspot.com/-ZFLo07k04GU/Unk8nzlsmEI/AAAAAAAACxo/NzphfjI_lsI/s400/2.png){width="400"
-height="211"}](//2.bp.blogspot.com/-ZFLo07k04GU/Unk8nzlsmEI/AAAAAAAACxo/NzphfjI_lsI/s1600/2.png)
-:::
+![](//2.bp.blogspot.com/-ZFLo07k04GU/Unk8nzlsmEI/AAAAAAAACxo/NzphfjI_lsI/s400/2.png)
 Add a Manual Activity at the end of the flow with the title \"Dummy\".
 We need 4 runbooks. one that monitors new Service Requests, one that
 will get all the Manual Activities in that Service Request, one that
 creates a relation in each Manual Activity to the CI. And the last
 runbook ties them all together.
 The monitoring runbook is just as one would expect.
-::: {.separator}
-:::
-::: {.separator}
-:::
-::: {.separator}
-:::
-::: {.separator}
-[![](//3.bp.blogspot.com/-pf7ymYdK-lI/Un-C-klUZUI/AAAAAAAAC04/X7rFaloTEYI/s1600/1.png)](//3.bp.blogspot.com/-pf7ymYdK-lI/Un-C-klUZUI/AAAAAAAAC04/X7rFaloTEYI/s1600/1.png)
-:::
-::: {.separator}
-[![](//2.bp.blogspot.com/-6h0Tk25fJmM/Un-C-mx9TOI/AAAAAAAAC1E/I4ITp5gBPeI/s400/2.png){width="400"
-height="111"}](//2.bp.blogspot.com/-6h0Tk25fJmM/Un-C-mx9TOI/AAAAAAAAC1E/I4ITp5gBPeI/s1600/2.png)
-:::
+![](//3.bp.blogspot.com/-pf7ymYdK-lI/Un-C-klUZUI/AAAAAAAAC04/X7rFaloTEYI/s1600/1.png)](//3.bp.blogspot.com/-pf7ymYdK-lI/Un-C-klUZUI/AAAAAAAAC04/X7rFaloTEYI/s1600/1.png)
+![](//2.bp.blogspot.com/-6h0Tk25fJmM/Un-C-mx9TOI/AAAAAAAAC1E/I4ITp5gBPeI/s400/2.png)
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [![](//4.bp.blogspot.com/-Z1WFcgy0Uug/Un-DaU4dhfI/AAAAAAAAC1I/lEof-uErJCU/s640/3.png){width="640" height="108"}](//4.bp.blogspot.com/-Z1WFcgy0Uug/Un-DaU4dhfI/AAAAAAAAC1I/lEof-uErJCU/s1600/3.png)
   Relate CI to Multiple Activities in a Service Request
@@ -51,8 +34,6 @@ The magic happens in this runbook:
   [![](//1.bp.blogspot.com/-lFn7bHj-Eig/Unq9QWTi6dI/AAAAAAAACyw/PBai7amdAOI/s400/4.png){width="400" height="68"}](//1.bp.blogspot.com/-lFn7bHj-Eig/Unq9QWTi6dI/AAAAAAAACyw/PBai7amdAOI/s1600/4.png)
   Get Manual Activity IDs in SR
   ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-::: {.separator}
-:::
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [![](//4.bp.blogspot.com/-_RDA1PLg_-I/Unq8BdBZNeI/AAAAAAAACyU/rpXmmb__fCA/s400/5.png){width="400" height="130"}](//4.bp.blogspot.com/-_RDA1PLg_-I/Unq8BdBZNeI/AAAAAAAACyU/rpXmmb__fCA/s1600/5.png)
   Get Related MAs
@@ -61,8 +42,6 @@ The magic happens in this runbook:
   [![](//3.bp.blogspot.com/-EZL8PiaDXlI/Unq8NeUDaTI/AAAAAAAACyc/1JJ_5YWLOi0/s400/6.png){width="400" height="242"}](//3.bp.blogspot.com/-EZL8PiaDXlI/Unq8NeUDaTI/AAAAAAAACyc/1JJ_5YWLOi0/s1600/6.png)
   Get \'Dummy\' MA
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-::: {.separator}
-:::
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   [![](//2.bp.blogspot.com/-0ixQf6k_brc/Unq8mB-otdI/AAAAAAAACyk/2wc_h4rKhX8/s400/7.png){width="400" height="102"}](//2.bp.blogspot.com/-0ixQf6k_brc/Unq8mB-otdI/AAAAAAAACyk/2wc_h4rKhX8/s1600/7.png)
   Delete MA Relation - Removes the Dummy Activity from the Service Request
@@ -92,14 +71,8 @@ runbook in the \"Concurrency\" tab, enter a number greater than 1 for
 will be of Manual Activities in a Service Request without overloading
 your runbook server. 5-10 is a good number (depending on your hardware
 setup).
-::: {.separator}
-[![](//4.bp.blogspot.com/-pcKkrcHgs3Q/Un-E8u4LZJI/AAAAAAAAC1c/KUm3M9fA22A/s400/5.png){width="400"
-height="132"}](//4.bp.blogspot.com/-pcKkrcHgs3Q/Un-E8u4LZJI/AAAAAAAAC1c/KUm3M9fA22A/s1600/5.png)
-:::
-::: {.separator}
-[![](//1.bp.blogspot.com/-udYe3y5VnA4/Un-FF__V8mI/AAAAAAAAC1k/dtBXSDKUfl8/s400/6.png){width="400"
-height="147"}](//1.bp.blogspot.com/-udYe3y5VnA4/Un-FF__V8mI/AAAAAAAAC1k/dtBXSDKUfl8/s1600/6.png)
-:::
+![](//4.bp.blogspot.com/-pcKkrcHgs3Q/Un-E8u4LZJI/AAAAAAAAC1c/KUm3M9fA22A/s400/5.png)
+![](//1.bp.blogspot.com/-udYe3y5VnA4/Un-FF__V8mI/AAAAAAAAC1k/dtBXSDKUfl8/s400/6.png)
 **Testing**: Start the monitoring runbook and create an instance of the
 template from the beginning of this tutorial and add a \"Windows
 Computer\" in the \"Related Items\" tab of the Service Request - or
@@ -111,5 +84,5 @@ Service Request\"-runbook.
 **Alternatives**: Instead of using a monitor you could add a
 runbook-activity as the first activity in the Service Request.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

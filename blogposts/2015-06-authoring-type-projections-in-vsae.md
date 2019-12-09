@@ -3,7 +3,7 @@ information on the hows and the whats of things. So today I will just
 show something basic; authoring a type projection.
 
 The VSAE can be downloaded from
-[here](http://www.microsoft.com/en-us/download/details.aspx?id=30169).
+here](http://www.microsoft.com/en-us/download/details.aspx?id=30169).
 You will need Visual Studio 2012/13 Ultimate or Professional.
 Now in Visual Studio create a new project. Select Templates-\>Management
 Pack-\>Service Manager and select the template that matches your
@@ -58,10 +58,7 @@ reference\...\"
 ```
 ```
 ```
-::: {.separator}
-[![](//2.bp.blogspot.com/-P_evR856A90/VZEdZhT84XI/AAAAAAAASlU/I2EAXxJSn-g/s640/addref.png){width="640"
-height="400"}](//2.bp.blogspot.com/-P_evR856A90/VZEdZhT84XI/AAAAAAAASlU/I2EAXxJSn-g/s1600/addref.png)
-:::
+![](//2.bp.blogspot.com/-P_evR856A90/VZEdZhT84XI/AAAAAAAASlU/I2EAXxJSn-g/s640/addref.png)
 ```
 ```
 ```
@@ -80,10 +77,7 @@ mine *IncidentTypeProjection.mpx*.
 You will be presented with some xml. Type \< and a number of possible
 XML-tags are suggested.
 ```
-::: {.separator}
-[![](//1.bp.blogspot.com/-3EcLZP3hh48/VZEfocru3mI/AAAAAAAASlg/xGpK1F71gx0/s640/xml.png){width="640"
-height="418"}](//1.bp.blogspot.com/-3EcLZP3hh48/VZEfocru3mI/AAAAAAAASlg/xGpK1F71gx0/s1600/xml.png)
-:::
+![](//1.bp.blogspot.com/-3EcLZP3hh48/VZEfocru3mI/AAAAAAAASlg/xGpK1F71gx0/s640/xml.png)
 ```
 ```
 ```
@@ -93,10 +87,7 @@ will mostly present you with valid XML.
 ```
 ```
 ```
-::: {.separator}
-[![](//1.bp.blogspot.com/-tiyXXHNHz_Q/VZEgWvtG_UI/AAAAAAAASlo/dkQZSkB1WUw/s640/xml2.png){width="640"
-height="418"}](//1.bp.blogspot.com/-tiyXXHNHz_Q/VZEgWvtG_UI/AAAAAAAASlo/dkQZSkB1WUw/s1600/xml2.png)
-:::
+![](//1.bp.blogspot.com/-tiyXXHNHz_Q/VZEgWvtG_UI/AAAAAAAASlo/dkQZSkB1WUw/s640/xml2.png)
 ```
 ```
 ```
@@ -113,10 +104,7 @@ Resolve any errors (there should be none).
 ```
 ```
 ```
-::: {.separator}
-[![](//2.bp.blogspot.com/-QE1yZNecm6E/VZEjBxQL66I/AAAAAAAASl0/dClGVmqtds8/s640/xml3.png){width="640"
-height="400"}](//2.bp.blogspot.com/-QE1yZNecm6E/VZEjBxQL66I/AAAAAAAASl0/dClGVmqtds8/s1600/xml3.png)
-:::
+![](//2.bp.blogspot.com/-QE1yZNecm6E/VZEjBxQL66I/AAAAAAAASl0/dClGVmqtds8/s640/xml3.png)
 ```
 ```
 ```
@@ -180,7 +168,7 @@ with all possible IDs (post in the comments below if you do).
 We are almost there. Go to properties of the project and in the build
 tab check \"generate sealed and signed management pack\". Browse for a
 key file and select your snk-file (if you don\'t know this part read
-[this](http://scsmnz.net/sealing-a-management-pack-using-fastseal-exe/)
+this](http://scsmnz.net/sealing-a-management-pack-using-fastseal-exe/)
 to get up to speed - you just need to read the part on Create your SNK).
 ```
 ```
@@ -232,5 +220,5 @@ The entirety of the fragment looks as below
       </LanguagePacks>
     </ManagementPackFragment>
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

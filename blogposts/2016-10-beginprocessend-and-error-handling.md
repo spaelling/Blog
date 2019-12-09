@@ -49,7 +49,7 @@ The process and end block is not executed" `
 myfunc -ErrorAction Stop
 ```
 The output is:
-[![](https://2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)](//2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)
+![](https://2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)](//2.bp.blogspot.com/-lB5WD9nJN9Q/V_TmYp9VThI/AAAAAAAASuU/iQlI35oy55UikaQMC3nw4s2raZzXINmvwCK4B/s1600/output1.PNG)
 We see that for both ErrorActions *Continue/SilentlyContinue* that the
 process block is executed. When we use *Stop* then Write-Error becomes a
 terminating error and the pipeline is stopped.
@@ -103,7 +103,7 @@ Write-Host "-ErrorAction Stop: The Write-Error in the process block becomes a te
 @(1,2,3) | myfunc -ErrorAction Stop
 ```
 The output is:
-[![](https://1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)](//1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)
+![](https://1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)](//1.bp.blogspot.com/-2KwQ82BkqFk/V_TnpPyerjI/AAAAAAAASug/OFNB3-74r9oIP4Hlr4RVQ36kyE57CFi1gCK4B/s1600/output2.PNG)
 Now we see that something uninteded is happening for both ErrorActions
 *Continue/SilentlyContinue*. 3 is echoed still. With *Stop* the story is
 as before, Write-Error becomes a terminating error and 3 is not echoed.
@@ -163,7 +163,7 @@ Write-Host 'this is not reached' `
 -ForegroundColor Cyan
 ```
 The output is:
-[![](https://2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)](//2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)
+![](https://2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)](//2.bp.blogspot.com/-FlD9mkKEVcQ/V_TpUR1OlgI/AAAAAAAASus/vW3J-KQYSkM70zJkm0hmEZwQIyWl2Zb4ACK4B/s1600/output3.PNG)
 We see that in all 3 cases that x greater than 2 is not echoed. Now
 ErrorAction Stop makes sense. We indicate that if the function fails for
 any input we do not wish to continue the script.
@@ -232,10 +232,10 @@ Write-Host 'this is not reached' `
 -ForegroundColor Cyan
 ```
 The output is:
-[![](https://3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)](//3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)
+![](https://3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)](//3.bp.blogspot.com/-2vzCyDwazJg/V_TqHGpUgXI/AAAAAAAASu4/w7AGOl0Aj_QNVthd-BwSMVRptbVks4qLACK4B/s1600/output4.PNG)
 I hope this helps understanding how some of the *begin..process..end*
 function works with regards to errors and error handling. I know I will
 be returning to this from time and again :D
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

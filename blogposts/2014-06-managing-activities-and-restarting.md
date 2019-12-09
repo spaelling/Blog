@@ -12,17 +12,11 @@ intended).
   ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Now let\'s fix this bugger. Click the \"Put on Hold\" task to the right
 and click Ok. Wait abit and the activity flow should look like this.
-::: {.separator}
-[![](//1.bp.blogspot.com/-NBLGuEcVAfQ/U6wiy0N4Q2I/AAAAAAAAC7w/moPShd105nA/s1600/SR_stuck02.PNG){width="640"
-height="89"}](//1.bp.blogspot.com/-NBLGuEcVAfQ/U6wiy0N4Q2I/AAAAAAAAC7w/moPShd105nA/s1600/SR_stuck02.PNG)
-:::
+![](//1.bp.blogspot.com/-NBLGuEcVAfQ/U6wiy0N4Q2I/AAAAAAAAC7w/moPShd105nA/s1600/SR_stuck02.PNG)
 Click the \"Resume\" task and click Ok. The workflow engine will
 recalculate the flow and will put the activity that was stuck in
 progress.
-::: {.separator}
-[![](//1.bp.blogspot.com/-GweJp58Ye6E/U6wjZrNVjNI/AAAAAAAAC78/lxS6kvSmt80/s1600/SR_stuck03.PNG){width="640"
-height="99"}](//1.bp.blogspot.com/-GweJp58Ye6E/U6wjZrNVjNI/AAAAAAAAC78/lxS6kvSmt80/s1600/SR_stuck03.PNG)
-:::
+![](//1.bp.blogspot.com/-GweJp58Ye6E/U6wjZrNVjNI/AAAAAAAAC78/lxS6kvSmt80/s1600/SR_stuck03.PNG)
 This can fix a large number of workflows gone haywire. Tried adding
 activities to a Parallel Activity that is already in progress? Forget
 about it! They will never get out of pending mode. Atleast not before
@@ -35,7 +29,7 @@ completed activities will be unchanged, but the first \"not-completed\"
 in line will be in progress and the rest following it will be pending.
 Activities are also subject to being deleted (if skip is not a valid
 option - skip is available for admins only. Rob Ford has a
-[workaround](http://gallery.technet.microsoft.com/SCSM-2012-Skip-Activity-5a3a763d)
+workaround](http://gallery.technet.microsoft.com/SCSM-2012-Skip-Activity-5a3a763d)
 for that though) - you cannot delete already completed activities - but
 really you can if you want to - read on\...
 Make sure the request is \"In progress\" - use \"Return to activity\" on
@@ -47,5 +41,5 @@ deletion. You really wanted to get rid of that activity did you?
 If you \"return to activity\" in a request that is on hold it will
 resume again.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

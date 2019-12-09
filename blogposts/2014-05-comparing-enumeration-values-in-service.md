@@ -47,5 +47,5 @@ with the name of the enumeration which also must be unique).
 *    // do something!*
 *} *
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -4,7 +4,7 @@ Service Manager using a script. What I later found out is that VS can do
 it all for you with the help of VSAE.
 I will base the code off of my previous blog post, and I suggest you
 read
-[it](http://codebeaver.blogspot.dk/2015/06/custom-task-for-work-item-search-in.html)
+it](http://codebeaver.blogspot.dk/2015/06/custom-task-for-work-item-search-in.html)
 before continuing. Also get acquainted with VSAE in [Authoring Type
 Projections in
 VSAE](http://codebeaver.blogspot.dk/2015/06/authoring-type-projections-in-vsae.html).
@@ -27,10 +27,7 @@ This means it will be included in the .mpb file we are building.
 Add a new item and select \"Empty Management Pack Fragment\". We will
 call it ConsoleTask.mpx. It doesn\'t matter what you call all of these
 mpx-files. The names will not appear anywhere in the final product.
-::: {.separator}
-[![](//4.bp.blogspot.com/-Tuh6l1Qf_Cg/VaZX9lXoaRI/AAAAAAAASmI/H374ZFloJhY/s640/1.png){width="640"
-height="442"}](//4.bp.blogspot.com/-Tuh6l1Qf_Cg/VaZX9lXoaRI/AAAAAAAASmI/H374ZFloJhY/s1600/1.png)
-:::
+![](//4.bp.blogspot.com/-Tuh6l1Qf_Cg/VaZX9lXoaRI/AAAAAAAASmI/H374ZFloJhY/s640/1.png)
 Copy paste in the code below:
 <ManagementPackFragment SchemaVersion="SM2.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 <Categories>
@@ -146,23 +143,17 @@ In the project properties  we go to build and check \"Generate sealed
 and signed management pack\" and select the .snk file to use for signing
 the management pack. In the Management group tab add and set the proper
 management group as default.
-::: {.separator}
-[![](//2.bp.blogspot.com/-Vw8UZTqB30Y/VaZalw2h_iI/AAAAAAAASmU/6BTi4VuadAY/s640/2.png){width="640"
-height="320"}](//2.bp.blogspot.com/-Vw8UZTqB30Y/VaZalw2h_iI/AAAAAAAASmU/6BTi4VuadAY/s1600/2.png)
-:::
+![](//2.bp.blogspot.com/-Vw8UZTqB30Y/VaZalw2h_iI/AAAAAAAASmU/6BTi4VuadAY/s640/2.png)
 And finally in the Deployment tab you check auto-increment version,
 start action must be \"Deploy projects to default management group
 only\" and projects to deploy is \"Deploy StartUp projects only\". The
 startup project can be selected in solution properties.
-::: {.separator}
-[![](//4.bp.blogspot.com/-bbsAkGJ3glY/VaZbZVmPcyI/AAAAAAAASmc/0_mXBbT488w/s640/3.png){width="640"
-height="320"}](//4.bp.blogspot.com/-bbsAkGJ3glY/VaZbZVmPcyI/AAAAAAAASmc/0_mXBbT488w/s1600/3.png)
-:::
+![](//4.bp.blogspot.com/-bbsAkGJ3glY/VaZbZVmPcyI/AAAAAAAASmc/0_mXBbT488w/s640/3.png)
 You should be good to go. First build using ctrl+shift+b (or right click
 solution and select *build solution*). Resolve any errors. When
 error-free (let me know in the comments below if I missed something) we
 can deploy the project by hitting F5.
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

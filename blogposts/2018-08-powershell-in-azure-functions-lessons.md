@@ -9,7 +9,7 @@ functions is lost, and you cannot use Write-Output in a function as that
 would go towards the output of the function, and not the log stream. But
 there is a trick if you really need that verbose output, you can
 redirect it (read more on that
-[here](https://blogs.technet.microsoft.com/heyscriptingguy/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell/)).
+here](https://blogs.technet.microsoft.com/heyscriptingguy/2014/03/30/understanding-streams-redirection-and-write-host-in-powershell/)).
 Try running below.
 ```
 # this will do nothing
@@ -92,5 +92,5 @@ $DefaultProfile = Login-AzureRmAccount -Tenant $TenantId -AccountId $env:Applica
 Note that this may fail if the MSI has access to no resources in any
 subscription. Anyways, it would be rather pointless if it does not.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

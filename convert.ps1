@@ -95,7 +95,7 @@ foreach ($BlogPost in $BlogPosts) {
 
 $AdvBlock = @"
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 
 "@
 
@@ -106,14 +106,7 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     pandoc $Doc.FullName -f html -t markdown -s -o $FilePath
     
     <# POST CLEANUP
-        TODO: 
-        remove empty codeblocks:
-        ```
-        ```
-        image references are messed up, may be an artefact from html
-        ::: {.separator}
-[![](link.to.png){width="640" height="176"}](link.to.png)
-:::
+        TODO:    
     #>
     
     $Content = Get-Content -Path $FilePath
@@ -131,12 +124,33 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
             # remove last occurence of \
             $Line = $Line -replace "(.*)\\(.*)", '$1$2'
         }
+        # skip if starting with :::
+        if($Line -like ":::*")
+        {
+            continue;
+        }
+        # messed up image reference, ![alt text](https://something.com/icon48.png "optional text")
+        # https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#images
+        # $Line = '[![](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s640/WAF01.png){width="640" height="176"}](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s1600/WAF01.png)'
+        if($Line -match "^\[!*")
+        {
+            # remove first occurence of the [ and then everything following { (included)
+            $Line = $Line -replace "\[(.*)", '$1' -replace "(.*)\{(.*)", '$1'
+        }
+        # the remaining is on the next line, height="176"}](https://....
+        if($Line -match "^height=`"*`"}*")
+        {
+            continue;
+        }
         if($InCodeBlock)
         {
             # trim line if in code block
             $Line = $line.Trim()
             # skip the line if blank in a code block
-            $SkipLine = $Line.Length -eq 0
+            if($Line.Length -eq 0)
+            {
+                continue;
+            }
         }
         else
         {
@@ -145,10 +159,10 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
                 $ConsecutiveBlankLinesCount += 1
                 # skip the line if this was the second blank line
                 if($ConsecutiveBlankLinesCount -gt 1)
-                {
-                    $SkipLine = $true        
+                {      
                     # decrement now that we are skipping the line
                     $ConsecutiveBlankLinesCount -= 1
+                    continue;
                 }
             }
             

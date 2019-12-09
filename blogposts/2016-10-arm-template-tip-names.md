@@ -41,5 +41,5 @@ and **{1}** replaced with **-nic**):
 And it could be made more advanced, perhaps leaning on the good ol\'
 *sprintf.*
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

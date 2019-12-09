@@ -16,10 +16,7 @@ which is what they use to generate documentation for the WAF. Currently
 it is missing a few rule Ids. But we will get back to this part.
 The end goal is to get something like this, presented in a Azure
 dashboard.
-::: {.separator}
-[![](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s640/WAF01.png){width="640"
-height="176"}](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s1600/WAF01.png)
-:::
+![](https://1.bp.blogspot.com/-k9eBbJixTgY/XO0DBXLxRyI/AAAAAAAAtW4/2MgIgbN1Tdg4NrICwYDfYmzYnD_TfY4MwCLcBGAs/s640/WAF01.png)
 Let\'s look at the query we need to write first.
 ```
 // variables
@@ -471,5 +468,5 @@ let rule_mapping = dynamic(
 });
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -60,5 +60,5 @@ blog-posts. To make it easier for me (and hopefully also others).
 -   When you have the time, look these
     through: <http://scsmnz.net/tag/scsm/>
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

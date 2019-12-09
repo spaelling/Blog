@@ -237,7 +237,7 @@ if (reservedBy != null &&
 currentStatusEMO.ToString().Equals(mpEnumReserved.ToString()))*
 *{*
 I am already using the helper functions! See this
-[post](http://codebeaver.blogspot.dk/2014/05/comparing-enumeration-values-in-service.html)
+post](http://codebeaver.blogspot.dk/2014/05/comparing-enumeration-values-in-service.html)
 on comparing enumerations.
 Next we will be creating a \'borrowed\' relationship between the user
 who reserved the item and the item.
@@ -315,5 +315,5 @@ reserve the item. I may also elaborate abit on the current solution (ex.
 returning items in bulks).
 Full source-code available [here](http://filebin.ca/1ODFsHFJHTEn).
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

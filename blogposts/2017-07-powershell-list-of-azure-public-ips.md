@@ -7,5 +7,5 @@ onfiguration.Id -like '*Microsoft.Network/networkinterfaces*'} | Select-Object -
 t {"$_,"}) -join '' | clip
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -1,19 +1,16 @@
 ﻿Just as the title says, in this post I will show how to write a simple
 website using Azure Function App in the still \"experimental language\"
 PowerShell. You can skip ahead and view there result
-[here](https://funcapppswebsite.azurewebsites.net/api/PSWebsite).
+here](https://funcapppswebsite.azurewebsites.net/api/PSWebsite).
 
 Doug Finke already
-[showed](https://dfinke.github.io/powershell/2018/04/24/PowerShell-Serving-an-HTML-Page-from-Azure-Functions.html)
+showed](https://dfinke.github.io/powershell/2018/04/24/PowerShell-Serving-an-HTML-Page-from-Azure-Functions.html)
 how to do this, but in his example you need to write the HTML code
 yourself. Being the lazy programmer I am, I wanted to use
-[ConvertTo-Html](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-6).
+ConvertTo-Html](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convertto-html?view=powershell-6).
 I am assuming you are familiar with rolling a Function App. Go ahead and
 create a HTTP trigger function and language set to PowerShell.
-::: {.separator}
-[![](https://4.bp.blogspot.com/-IGM7kc0hqgc/W1jIRdZYnMI/AAAAAAAAk_c/UoMZTFvJEbc2pyglBdIMf_rQ6Iy09JMdgCLcBGAs/s640/funcappps.PNG){width="640"
-height="152"}](https://4.bp.blogspot.com/-IGM7kc0hqgc/W1jIRdZYnMI/AAAAAAAAk_c/UoMZTFvJEbc2pyglBdIMf_rQ6Iy09JMdgCLcBGAs/s1600/funcappps.PNG)
-:::
+![](https://4.bp.blogspot.com/-IGM7kc0hqgc/W1jIRdZYnMI/AAAAAAAAk_c/UoMZTFvJEbc2pyglBdIMf_rQ6Iy09JMdgCLcBGAs/s640/funcappps.PNG)
 Name it however you like and leave other settings to default.
 The real magic happens with the discovery of the -Fragment switch to
 ConvertTo-Html. It will provide you only with the body, meaning you can
@@ -50,10 +47,7 @@ body    = $html
 } | ConvertTo-Json | Out-File -Encoding Ascii -FilePath $res
 ```
 The output will look something like this
-::: {.separator}
-[![](https://1.bp.blogspot.com/-no_Vx6uWTME/W1jKs0wQPBI/AAAAAAAAk_o/2dRsltX3Elk2qWBdrrsFa7upA4MZGUl_wCLcBGAs/s640/websiteout.PNG){width="330"
-height="640"}](https://1.bp.blogspot.com/-no_Vx6uWTME/W1jKs0wQPBI/AAAAAAAAk_o/2dRsltX3Elk2qWBdrrsFa7upA4MZGUl_wCLcBGAs/s1600/websiteout.PNG)
-:::
+![](https://1.bp.blogspot.com/-no_Vx6uWTME/W1jKs0wQPBI/AAAAAAAAk_o/2dRsltX3Elk2qWBdrrsFa7upA4MZGUl_wCLcBGAs/s640/websiteout.PNG)
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

@@ -59,9 +59,8 @@ testing](https://github.com/spaelling/hello-azure-functions/blob/master/test.ps1
 that).
 Also keep your webhooks a secret. In the aforementioned script I show
 how to get the webhook URI from an Azure Key Vault.
-[![](https://3.bp.blogspot.com/-V4oxoyz6S28/V-j-sq8WcGI/AAAAAAAASt4/SKTRnfZM4bkMx3O2LuF7xaq4MbOVxw5BwCK4B/s640/1.PNG){width="640"
-height="344"}](//3.bp.blogspot.com/-V4oxoyz6S28/V-j-sq8WcGI/AAAAAAAASt4/SKTRnfZM4bkMx3O2LuF7xaq4MbOVxw5BwCK4B/s1600/1.PNG)
+![](https://3.bp.blogspot.com/-V4oxoyz6S28/V-j-sq8WcGI/AAAAAAAASt4/SKTRnfZM4bkMx3O2LuF7xaq4MbOVxw5BwCK4B/s640/1.PNG)
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

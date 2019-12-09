@@ -46,12 +46,7 @@ ask if you wish to save the query. Search for objects of the class Work
 Item and add the property Description. Doesn\'t matter what you input,
 this will be the variable component of the query in the console task.
 ```
-::: {.separator}
-[![](//1.bp.blogspot.com/-sboGr-hYlPs/VYnUmjf2FfI/AAAAAAAASj0/bn5SyvVs-vw/s640/advsearch.png){width="640"
-height="592"}](//1.bp.blogspot.com/-sboGr-hYlPs/VYnUmjf2FfI/AAAAAAAASj0/bn5SyvVs-vw/s1600/advsearch.png)
-:::
-::: {.separator}
-:::
+![](//1.bp.blogspot.com/-sboGr-hYlPs/VYnUmjf2FfI/AAAAAAAASj0/bn5SyvVs-vw/s640/advsearch.png)
 ```
 Likely nothing will turn up. After closing the window you will be
 prompted to save the query. Click \"yes\" and enter a query name. Name
@@ -123,7 +118,7 @@ specified URI, and voila the search results window is opened with the
 found objects that matches the search configuration we fed the
 SearchNodeProvider.
 You can download the entire source
-[here](https://gallery.technet.microsoft.com/Custom-Console-Task-for-30acf9bf).
+here](https://gallery.technet.microsoft.com/Custom-Console-Task-for-30acf9bf).
 Happy coding.
 *Edit*: It is needed to change the *thisMPID* variable in
 *LocalizationHelper.cs* to the guid of the management pack that contains
@@ -136,5 +131,5 @@ to automate this process.
 ```
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

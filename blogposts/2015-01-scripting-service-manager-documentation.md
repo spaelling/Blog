@@ -8,10 +8,7 @@ here.
 In the following I will present a script that helps with something as
 tedious as documenting views in Service Manager. Are you going to do
 that manually?
-::: {.separator}
-[![](//1.bp.blogspot.com/-d2naK9igUCY/VLTj4bAsTeI/AAAAAAAADyE/Cwt-RNNeX9o/s1600/badtime01.jpg){width="640"
-height="640"}](//1.bp.blogspot.com/-d2naK9igUCY/VLTj4bAsTeI/AAAAAAAADyE/Cwt-RNNeX9o/s1600/badtime01.jpg)
-:::
+![](//1.bp.blogspot.com/-d2naK9igUCY/VLTj4bAsTeI/AAAAAAAADyE/Cwt-RNNeX9o/s1600/badtime01.jpg)
 Also views change, and you would then have to update your documentation.
 You really need this script!
 ```
@@ -274,5 +271,5 @@ I also found
 this: <http://www.buchatech.com/2015/03/service-manager-discovery-report/> -
 check it out.
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 

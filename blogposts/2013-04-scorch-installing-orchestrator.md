@@ -10,9 +10,9 @@ get it to work with 3.7). Downloads below:
     Toolkit](http://www.microsoft.com/en-us/download/details.aspx?id=28725) (the
     third of three available downloads)
 ```
-[tags: Orchestrator, Integration Pack, Toolkit, WiX, System
+tags: Orchestrator, Integration Pack, Toolkit, WiX, System
 Center]{style="FONT-SIZE: xx-small"}
 ```
 
-Converted from html using https://github.com/spaelling/Blog/blob/master/convert.ps1 
+**Converted from html using [convert.ps1](https://github.com/spaelling/Blog/blob/master/convert.ps1)**
 
