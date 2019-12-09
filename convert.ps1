@@ -106,7 +106,9 @@ foreach ($Doc in (Get-ChildItem -Path $OutDir)) {
     pandoc $Doc.FullName -f html -t markdown -s -o $FilePath
     
     <# POST CLEANUP
-        TODO:    
+        TODO:
+        newlines around img refs.
+        some of the oldest posts are really messed up, even the html is missing http from href
     #>
     
     $Content = Get-Content -Path $FilePath
