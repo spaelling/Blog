@@ -1,8 +1,5 @@
+@inherits Blog.Pages.ViewBlogpost2
 @page "/blog/{index}"
-@inject HttpClient Http
-@inject List<shared.GithubContent> blogposts
-@using blog.shared
-@using MarkdownSharp
 
 <!-- TODO
 index does not work when we populate blogposts on a different page, Index was out of range. Must be non-negative and less than the size of the collection. 
@@ -17,24 +14,4 @@ index does not work when we populate blogposts on a different page, Index was ou
 else
 {
     @((MarkupString)Content)
-}
-
-@code {
-
-    private readonly Markdown markdown = new Markdown();
-    private int index => int.Parse(Index);
-    private GithubContent content => blogposts[index];
-
-    [Parameter]
-    public string Index { get; set; }
-
-    public string Title => content.DisplayName;
-
-    public string Content { get; set; }
-
-    protected override async Task OnInitializedAsync()
-    {
-        var rawmarkdown = await Http.GetStringAsync(blogposts[index].Download_url);
-        Content = markdown.Transform(rawmarkdown);
-    }
 }

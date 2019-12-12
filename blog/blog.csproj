@@ -11,9 +11,19 @@
     <PackageReference Include="Microsoft.AspNetCore.Blazor.Build" Version="3.1.0-preview4.19579.2" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.HttpClient" Version="3.1.0-preview4.19579.2" />
     <PackageReference Include="Microsoft.AspNetCore.Blazor.DevServer" Version="3.1.0-preview4.19579.2" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <!-- fails to build with ref. to TagHelperSamples.Markdown -->
     <!-- <PackageReference Include="Microsoft.AspNetCore.Razor" Version="2.2.0.0" /> -->
     <!-- <PackageReference Include="TagHelperSamples.Markdown" Version="2.0.49" /> -->
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include=".\Environment\config.dev.json" Condition="'$(Configuration)' == 'Debug'">
+      <LogicalName>config.json</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include=".\Environment\config.prod.json" Condition="'$(Configuration)' == 'Release'">
+      <LogicalName>config.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>  
 
 </Project>

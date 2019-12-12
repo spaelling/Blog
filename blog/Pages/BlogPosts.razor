@@ -1,7 +1,5 @@
+@inherits Blog.Pages.BlogPosts2
 @page "/blogposts"
-@inject HttpClient Http
-@inject List<shared.GithubContent> blogposts
-@using blog.shared
 
 <h1>Blogposts</h1>
 
@@ -30,20 +28,4 @@ else
             }
         </tbody>
     </table>
-}
-
-@code {    
-
-    private string GithubContentUrl = "https://api.github.com/repos/spaelling/blog/contents/blogposts";
-
-    protected override async Task OnInitializedAsync()
-    {
-        blogposts.Clear();
-        blogposts.AddRange(await Http.GetJsonAsync<GithubContent[]>(GithubContentUrl));
-    }
-
-    protected string GetIndex(GithubContent content)
-    {
-        return $"{blogposts.IndexOf(content)}";
-    }
 }

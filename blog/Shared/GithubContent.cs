@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace blog.shared
+namespace Blog.Shared
 {
     public class GithubContent
     {
