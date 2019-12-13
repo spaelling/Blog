@@ -14,16 +14,15 @@ else
             <tr>
                 <th>Title</th>
                 <th>Date</th>
-                <th>Url</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var blogpost in blogposts)
             {
                 <tr>
-                    <td>@blogpost.DisplayName</td>
-                    <td>@blogpost.Date</td>
+                    <!-- TODO remove data from title, and capitalize -->
                     <td><a href="/blog/@GetIndex(@blogpost)">@blogpost.DisplayName</a></td>
+                    <td>@blogpost.Date</td>
                 </tr>
             }
         </tbody>
