@@ -13,3 +13,7 @@ $null = az storage blob update --account-name sacodebeaverblog -c `$web -n _fram
 Remember to enable deep linking as described in [blazor-azure-storage-static-websites](https://anthonychu.ca/post/blazor-azure-storage-static-websites/)
 
 Custom domain [Enable custom domain & SSL for a static website in Azure](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-custom-domain)
+
+## Libraries used
+
+- [MarkdownSharp](https://github.com/StackExchange/MarkdownSharp)
